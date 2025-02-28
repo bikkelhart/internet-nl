@@ -4,7 +4,7 @@ header {
   z-index: 1;
   background: var(--primary-bg-color);
   box-shadow: 0px 0px 3px 0px var(--secondary-bg-color);
-
+  background: red !important;
   .container {
     display: flex;
     align-items: center;
