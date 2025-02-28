@@ -136,16 +136,11 @@
         </p>
       </div>
       <ul class="hall-of-fame-list">
-        <li>Vimexx</li>
-        <li>DevNomads</li>
-        <li>ConsultHosting</li>
-        <li>Misterdot</li>
-        <li>Unihost brasil</li>
-        <li>Vimexx</li>
-        <li>DevNomads</li>
-        <li>ConsultHosting</li>
-        <li>Misterdot</li>
-        <li>Unihost brasil</li>
+        {% for member in halloffame %}
+          <li>
+            <a href="{{member.permalink}}">{{member.domain|idna}}</a>
+          </li>
+        {% endfor %}
       </ul>
       <div class="button-container">
         <a class="primary-button" href="/">
