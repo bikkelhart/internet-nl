@@ -242,3 +242,25 @@
     border-width: 96px;
   }
 }
+
+.hall-of-fame-list {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 8px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+
+  li {
+    padding: 8px;
+    border-radius: 4px;
+    background: var(--senary-bg-color);
+    text-align: center;
+    color: var(--primary-text-color);
+    font: var(--heading-font-s);
+  }
+}
