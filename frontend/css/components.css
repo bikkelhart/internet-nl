@@ -263,5 +263,6 @@
     text-align: center;
     color: var(--primary-text-color);
     font: var(--heading-font-s);
+    height: 100%;
   }
 }
