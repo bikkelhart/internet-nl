@@ -1,0 +1,116 @@
+.about-section {
+
+  h2 {
+    grid-column: span 12;
+    font: var(--heading-font-xs);
+    color: var(--quinary-text-color);
+    padding-bottom: 8px;
+
+    @media (min-width: 900px) {
+      padding-bottom: 24px;
+    }
+  }
+
+  p {
+    grid-column: span 12;
+    color: var(--tertiary-text-color);
+    font: var(--heading-font-m);
+
+    @media (min-width: 900px) {
+      grid-column: 1 / 7;
+    }
+
+    &:nth-of-type(2) {
+      font: var(--body-font-m);
+      color: var(--primary-text-color);
+      padding-top: 16px;
+
+      @media (min-width: 900px) {
+        grid-column: 8 / 13;
+        padding-top: 0;
+      }
+    }
+  }
+
+  a {
+    display: none;
+
+    @media (min-width: 900px) {
+      grid-column: span 12;
+      gap: 8px;
+      display: flex;
+      align-items: center;
+      color: var(--primary-text-color);
+      font: var(--button-font-m);
+      justify-self: center;
+      margin-top: 48px;
+      border-bottom: 1px solid currentColor;
+    }
+  }
+}
+
+.logo-list {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  padding-top: 40px;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 100px;
+    overflow-x: auto;
+    padding-top: 80px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-color: #888 transparent;
+    scrollbar-width: thin;
+    padding-bottom: 20px;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+  }
+
+  li {
+    grid-column: span 1;
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: start;
+
+    &:last-child {
+      display: none;
+
+      @media (min-width: 900px) {
+        display: block;
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    
+    @media screen and (min-width: 900px) {
+      max-width: initial;
+    }
+
+    &:first-of-type {
+      display: var(--image-visible);
+    }
+
+    &:last-of-type {
+      display: var(--image-hidden);
+    }
+  }
+}
