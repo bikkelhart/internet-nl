@@ -22,10 +22,21 @@ header {
   }
 }
 
+.header-logo-toggle-controls {
+  display: flex;
+  justify-content: space-between;
+  background: var(--primary-bg-color);
+  z-index: 1;
+  width: 100%;
+
+  @media (width >= 900px) {
+    width: auto;
+  }
+}
+
 .header-logo {
   display: flex;
   align-items: center;
-  z-index: 1;
 
   @media (width >= 900px) {
     width: 182px;
@@ -103,10 +114,11 @@ header:has(.active) {
   flex-direction: column;
   position: absolute;
   height: 100vh;
-  top: 100%;
+  top: 0;
   left: 0;
   background-color: var(--primary-bg-color);
-  display: none;
+  display: none;  
+  overflow: auto;
 
   @media (width >= 900px) {
     width: 100%;
@@ -127,7 +139,7 @@ header:has(.active) {
 
 .nav-controls.active {
   display: flex;
-  padding: 20px 16px;
+  padding: 90px 20px 16px;
   align-items: start;
   gap: 60px;
 }
