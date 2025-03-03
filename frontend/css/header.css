@@ -9,19 +9,8 @@ header {
     display: flex;
     align-items: center;
     padding: 20px 16px;
-    gap: 60px;
-
-    &:has(.active) {
-      flex-direction: column;
-      overflow: auto;
-      height: 100vh;
-    }
-
-    @media (width >= 900px) {
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 16px;
-    }
+    justify-content: space-between;
+    gap: 16px;
 
     @media (900px <= width <= 1100px) {
       flex-wrap: wrap;
@@ -30,16 +19,6 @@ header {
     @media (scripting: none) {
       flex-wrap: wrap;
     }
-  }
-}
-
-.header-logo-toggle-controls {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-
-  @media (width >= 900px) {
-    width: auto;
   }
 }
 
@@ -122,12 +101,18 @@ header:has(.active) {
   align-items: center;
   width: 100%;
   flex-direction: column;
+  position: absolute;
+  height: 100vh;
+  top: 100%;
+  left: 0;
   background-color: var(--primary-bg-color);
   display: none;
 
   @media (width >= 900px) {
     width: 100%;
     flex-direction: row;
+    position: initial;
+    height: auto;
     display: flex;
     justify-content: space-between;
     gap: 8px;
