@@ -1,0 +1,74 @@
+.hall-of-fame-section {
+  background: var(--secondary-bg-color);
+  border-radius: 16px;
+  overflow: clip;
+  margin: 0 16px;
+
+  .container {
+    row-gap: 24px;
+    position: relative;
+    z-index: 0;
+    padding: 32px 16px;
+
+    @media (min-width: 900px) {
+      row-gap: 48px;
+      padding: 64px 16px;
+    }
+
+    .button-container {
+      grid-column: span 12;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+
+      @media (min-width: 900px) {
+        flex-direction: row;
+        gap: 24px;
+      }
+    }
+  }
+
+  .content {
+    grid-column: span 12;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    text-align: center;
+    
+    @media (min-width: 900px) {
+      grid-column: 3 / 11;
+      gap: 16px;
+    }
+
+    h2 {
+      font: var(--heading-font-xs);
+      color: var(--quinary-text-color);
+    }
+
+    p {
+      font: var(--heading-font-s);
+      color: var(--tertiary-text-color);
+    }
+
+    span {
+      color: var(--quinary-text-color);
+    }
+  }
+
+  .ellipse-container {
+    display: none;
+    bottom: 60%;
+
+    @media (min-width: 900px) {
+      bottom: -25%;
+      right: -10%;
+      display: flex;
+    }
+
+    .ellipse {
+      transform: scaleX(-1);
+      background: var(--ellipse-color);
+    }
+  }
+}
