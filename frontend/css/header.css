@@ -12,6 +12,14 @@ header {
     justify-content: space-between;
     gap: 16px;
 
+    &:has(.active) {
+      padding-top: 0;
+
+      .header-logo-toggle-controls {
+        padding-top: 20px;
+      }
+    }
+
     @media (900px <= width <= 1100px) {
       flex-wrap: wrap;
     }
@@ -22,6 +30,7 @@ header {
   }
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .header-logo-toggle-controls {
   display: flex;
   justify-content: space-between;
