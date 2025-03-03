@@ -137,6 +137,7 @@ header:has(.active) {
     display: flex;
     justify-content: space-between;
     gap: 8px;
+    overflow: initial;
   }
 
   @media (scripting: none) {
@@ -251,7 +252,7 @@ header nav {
     }
 
     &:focus-within .nav-sublist {
-        display: flex;
+      display: flex;
     }
 
     &:hover .nav-sublist {
