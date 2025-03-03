@@ -238,11 +238,8 @@ FROM app AS app-dev
 # required for compose `develop` mode file sync/copy
 USER root
 
-# copy dependencies to rebuild CSS (postcss)
-COPY --from=frontend /usr/local/bin/ /usr/local/bin/
-COPY --from=frontend /usr/local/lib/node_modules /usr/local/lib/node_modules
 
-# copy browser reload module
+# browser reload
 COPY --from=linttest-deps /usr/local/lib/python${PYTHON_VERSION}/dist-packages/django_browser_reload /usr/local/lib/python${PYTHON_VERSION}/dist-packages/django_browser_reload
 
 # supplement application with unittest, lint dependencies
