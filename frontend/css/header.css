@@ -3,20 +3,27 @@ header {
   top: 0;
   z-index: 1;
   background: var(--primary-bg-color);
-  box-shadow: 0px 0px 3px 0px var(--secondary-bg-color);
+  box-shadow: 0 0 3px 0 var(--secondary-bg-color);
 
   .container {
     display: flex;
     align-items: center;
     padding: 20px 16px;
-    gap: 8px;
-    justify-content: space-between;
+    gap: 60px;
 
-    @media (min-width: 900px) {
-      flex-direction: row;
+    &:has(.active) {
+      flex-direction: column;
+      overflow: auto;
+      height: 100vh;
     }
 
-    @media (min-width: 900px) and (max-width: 1100px) {
+    @media (width >= 900px) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    @media (900px <= width <= 1100px) {
       flex-wrap: wrap;
     }
 
@@ -26,18 +33,27 @@ header {
   }
 }
 
+.header-logo-toggle-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (width >= 900px) {
+    width: auto;
+  }
+}
+
 .header-logo {
   display: flex;
   align-items: center;
   z-index: 1;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     width: 182px;
     height: 40px;
   }
 
   svg {
-    
     .search-icon-background, 
     .big-text {
       fill: var(--primary-logo-color);
@@ -55,7 +71,7 @@ header {
       fill: var(--primary-logo-color);
       display: none;
 
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         display: initial;
       }
     }
@@ -64,28 +80,53 @@ header {
       fill: var(--secondary-logo-color);
       display: none;
 
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         display: initial;
       }
     }
   }
 }
 
+.toggle-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-text-color);
+  font: var(--button-font-m);
+  fill: currentcolor;
+
+  .close {
+    display: none;
+  }
+
+  @media (width >= 900px) {
+    display: none;
+  }
+
+  @media (scripting: none) {
+    display: none;
+  }
+}
+
+header:has(.active) {
+  .close {
+    display: initial;
+  }
+
+  .open {
+    display: none;
+  }
+}
+
 .nav-controls {
   align-items: center;
-  height: 100vh;
   width: 100%;
-  position: absolute;
   flex-direction: column;
-  top: 100%;
-  left: 0;
   background-color: var(--primary-bg-color);
   display: none;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     width: 100%;
-    height: auto;
-    position: initial;
     flex-direction: row;
     display: flex;
     justify-content: space-between;
@@ -107,10 +148,8 @@ header {
 }
 
 body:has(.nav-controls.active) {
-  @media (scripting: enabled) {
-    @media (max-width: 900px) {
+  @media (scripting: enabled) and (width <= 900px) {
       overflow: clip;
-    }
   }
 }
 
@@ -120,7 +159,7 @@ header nav {
   gap: 8px;
   width: 100%;
   
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     display: flex;
     align-items: center;
     height: auto;
@@ -133,7 +172,7 @@ header nav {
     width: 100%;
     gap: 40px;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       flex-direction: row;
       align-items: center;
       width: auto;
@@ -141,8 +180,7 @@ header nav {
     }
 
     @media (scripting: none) {
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-flow: row wrap;
     }
   }
 
@@ -158,15 +196,14 @@ header nav {
       font-size: 24px;
     }
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       gap: 4px;
       font-size: initial;
     }
   }
 
   .nav-item:has(.nav-sublist) {
-
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       position: relative;
 
       &::after {
@@ -182,8 +219,7 @@ header nav {
     > button > svg {
       transform: rotate(270deg) scale(1.5);
 
-
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         transform: rotate(0deg);
       }
     }
@@ -194,7 +230,7 @@ header nav {
       padding: 10px 24px;
       gap: 24px;
 
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         gap: 16px;
         position: absolute;
         padding: 20px 24px;
@@ -213,7 +249,7 @@ header nav {
     }
 
     &:hover .nav-sublist {
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         display: flex;
       }
     }
@@ -226,14 +262,14 @@ header nav {
         font-size: 20px;
       }
 
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         font-size: initial;
       }
 
       svg {
         display: none;
 
-        @media (min-width: 900px) {
+        @media (width >= 900px) {
           display: initial;
           transform: rotate(270deg);
         }
@@ -242,42 +278,11 @@ header nav {
   }
 }
 
-.toggle-menu {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--primary-text-color);
-  font: var(--button-font-m);
-  fill: currentColor;
-
-  .close {
-    display: none;
-  }
-
-  &:has(+ .active) {
-    .open {
-      display: none;
-    }
-
-    .close {
-      display: initial;
-    } 
-  }
-
-  @media (min-width: 900px) {
-    display: none;
-  }
-
-  @media (scripting: none) {
-    display: none;
-  }
-}
-
 .language-theme-controls {
   display: flex;
   gap: 50px;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     display: flex;
     flex-direction: row;
     gap: 24px;
@@ -309,9 +314,10 @@ header nav {
     text-transform: uppercase;
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   button {
     color: var(--primary-text-color);
-    border: 1px solid currentColor;
+    border: 1px solid currentcolor;
     border-radius: 8px;
     padding: 2px;
 
@@ -326,6 +332,7 @@ header nav {
   font: var(--button-font-s);
   color: var(--primary-text-color);
   gap: 8px;
+  align-items: center;
 
   .switch-container {
     cursor: pointer;
@@ -351,7 +358,6 @@ header nav {
 }
 
 [data-theme="dark"] .theme-button {
-
   .switch-container {
     justify-content: right;
     background-color: #34545F;
@@ -372,7 +378,6 @@ header nav {
 }
 
 [data-theme="light"] .theme-button {
-  
     .switch-container {
       justify-content: left;
       background-color: #BC6D07;
@@ -394,7 +399,6 @@ header nav {
 
 @media (scripting: none) and (prefers-color-scheme: dark) {
   .theme-button {
-    
     .switch-container {
       justify-content: right;
       background-color: #34545F;
@@ -417,7 +421,6 @@ header nav {
 
 @media (scripting: none) and (prefers-color-scheme: light) {
   .theme-button {
-    
     .switch-container {
       justify-content: left;
       background-color: #BC6D07;
