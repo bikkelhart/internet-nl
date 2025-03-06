@@ -11,9 +11,13 @@ header {
   .container {
     display: flex;
     align-items: center;
-    padding-block: 20px;
+    padding: 0;
     justify-content: space-between;
     gap: 16px;
+
+    @media (width >= 900px) {
+      padding: 20px 16px;
+    }
 
     &:has(.active) {
       padding: 0;
@@ -35,9 +39,11 @@ header {
   background: var(--primary-bg-color);
   z-index: 1;
   width: 100%;
+  padding: 20px 16px;
 
   @media (width >= 900px) {
     width: auto;
+    padding: 0;
   }
 }
 
