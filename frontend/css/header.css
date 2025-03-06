@@ -137,9 +137,12 @@ header:has(.active) {
   background-color: var(--primary-bg-color);
   display: none;  
   overflow: auto;
-  padding: 120px 16px 30px;
 
-  @media (prefers-reduced-motion: no-preference) {
+  @media (scripting: enabled) {
+    padding: 120px 16px 30px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
     @supports (transition-behavior: allow-discrete) {
       transition: display 0.5s allow-discrete, opacity 0.5s allow-discrete, left 0.5s allow-discrete;
       left: 100%;
@@ -281,7 +284,7 @@ header nav {
       flex-direction: column;
       gap: 32px;
 
-      @media (prefers-reduced-motion: no-preference) {
+      @media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
         @supports (transition-behavior: allow-discrete) {
           opacity: 0;
           max-height: 0;
