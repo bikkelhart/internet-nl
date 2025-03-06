@@ -436,11 +436,11 @@ header nav {
 
 .active .language-form select {
   background: #FFF;
-  color: #037584;
+  color: #34545F;
   font-size: 1rem;
 
   option {
-    color: #037584;
+    color: #34545F;
     font-size: 1rem;
   }
 }
