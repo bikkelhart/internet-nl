@@ -1,42 +1,50 @@
 :root {
+  /* NAV FONT MOBILE */
+  --nav-font: 700 1.25rem/1.5 'Montserrat', sans-serif;
+  --subnav-font: 700 1rem/1.5 'Montserrat', sans-serif;
+
   /* HEADING FONT MOBILE */
-    --heading-font-xs: 700 14px/22px 'Montserrat', sans-serif;
-    --heading-font-s: 700 14px/22px 'Montserrat', sans-serif;
-    --heading-font-m: 700 20px/28px 'Montserrat', sans-serif;
-    --heading-font-l: 700 20px/28px 'Montserrat', sans-serif;
-    --heading-font-xl: 700 24px/32px 'Montserrat', sans-serif;
+  --heading-font-xs: 700 0.875rem/1.5 'Montserrat', sans-serif;
+  --heading-font-s: 700 0.875rem/1.5 'Montserrat', sans-serif;
+  --heading-font-m: 700 1.25rem/1.5 'Montserrat', sans-serif;
+  --heading-font-l: 700 1.25rem/1.5 'Montserrat', sans-serif;
+  --heading-font-xl: 700 1.5rem/1.25 'Montserrat', sans-serif;
 
-    /* TEXT FONT MOBILE */
-    --body-font-xs: 400 14px/22px 'Roboto', sans-serif;
-    --body-font-s: 400 14px/24px 'Roboto', sans-serif;
-    --body-font-m: 400 16px/20px 'Roboto', sans-serif;
+  /* TEXT FONT MOBILE */
+  --body-font-xs: 400 0.875rem/1.5 'Roboto', sans-serif;
+  --body-font-s: 400 0.875rem/1.75 'Roboto', sans-serif;
+  --body-font-m: 400 1rem/1.25 'Roboto', sans-serif;
 
-    /* BUTTON FONT MOBILE */
-    --button-font-xs: 700 14px/22px 'Montserrat', sans-serif;
-    --button-font-s: 700 14px/28px 'Montserrat', sans-serif;
-    --button-font-m: 700 16px/36px 'Montserrat', sans-serif;
-    --button-font-l: 700 16px/24px 'Montserrat', sans-serif;
-  
-    @media (width >= 900px) {
-      /* HEADING FONT DESKTOP */
-      --heading-font-xs: 700 14px/28px 'Montserrat', sans-serif;
-      --heading-font-s: 700 16px/24px 'Montserrat', sans-serif;
-      --heading-font-m: 700 24px/32px 'Montserrat', sans-serif;
-      --heading-font-l: 700 32px/40px 'Montserrat', sans-serif;
-      --heading-font-xl: 700 40px/48px 'Montserrat', sans-serif;
+  /* BUTTON FONT MOBILE */
+  --button-font-xs: 700 0.875rem/1.5 'Montserrat', sans-serif;
+  --button-font-s: 700 0.875rem/2 'Montserrat', sans-serif;
+  --button-font-m: 700 1rem/2.25 'Montserrat', sans-serif;
+  --button-font-l: 700 1rem/1.5 'Montserrat', sans-serif;
 
-      /* TEXT FONT DESKTOP */
-      --body-font-xs: 400 14px/22px 'Roboto', sans-serif;
-      --body-font-s: 400 16px/24px 'Roboto', sans-serif;
-      --body-font-m: 400 18px/32px 'Roboto', sans-serif;
+  @media (width >= 900px) {
+    /* NAV FONT DESKTOP */
+    --nav-font: 700 1rem/2 'Montserrat', sans-serif;
+    --subnav-font: 700 1rem/2 'Montserrat', sans-serif;
 
-      /* BUTTON FONT DESKTOP */
-      --button-font-xs: 700 14px/22px 'Montserrat', sans-serif;
-      --button-font-s: 700 16px/32px 'Montserrat', sans-serif;
-      --button-font-m: 700 18px/36px 'Montserrat', sans-serif;
-      --button-font-l: 700 20px/28px 'Montserrat', sans-serif;
-    }
+    /* HEADING FONT DESKTOP */
+    --heading-font-xs: 700 0.875rem/2 'Montserrat', sans-serif;
+    --heading-font-s: 700 1rem/1.5 'Montserrat', sans-serif;
+    --heading-font-m: 700 1.5rem/1.33 'Montserrat', sans-serif;
+    --heading-font-l: 700 2rem/1.25 'Montserrat', sans-serif;
+    --heading-font-xl: 700 2.5rem/1.25 'Montserrat', sans-serif;
+
+    /* TEXT FONT DESKTOP */
+    --body-font-xs: 400 0.875rem/1.5 'Roboto', sans-serif;
+    --body-font-s: 400 1rem/1.5 'Roboto', sans-serif;
+    --body-font-m: 400 1.125rem/1.75 'Roboto', sans-serif;
+
+    /* BUTTON FONT DESKTOP */
+    --button-font-xs: 700 0.875rem/1.5 'Montserrat', sans-serif;
+    --button-font-s: 700 1rem/2 'Montserrat', sans-serif;
+    --button-font-m: 700 1.125rem/2 'Montserrat', sans-serif;
+    --button-font-l: 700 1.25rem/1.5 'Montserrat', sans-serif;
   }
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -72,6 +80,9 @@
     --tertiary-logo-color: #FFF;
     --quaternary-logo-color: #FFF;
     --quinary-logo-color: #34545F;
+
+    /* BORDER COLOR LIGHTMODE */
+    --nav-border-color: #037584;
 
     /* IMAGE VISIBLITY LIGHTMODE */
     --image-visible: block;
@@ -117,6 +128,9 @@
     --quaternary-logo-color: #34545F;
     --quinary-logo-color: #34545F;
 
+    /* BORDER COLOR DARKMODE */
+    --nav-border-color: #000;
+    
     /* IMAGE VISIBILITY DARKMODE */
     --image-visible: none;
     --image-hidden: block;
@@ -160,6 +174,9 @@
   --quaternary-logo-color: #FFF;
   --quinary-logo-color: #34545F;
 
+  /* BORDER COLOR LIGHTMODE */
+  --nav-border-color: #037584;
+  
   /* IMAGE VISIBILITY LIGHTMODe */
   --image-visible: block;
   --image-hidden: none;
@@ -201,6 +218,9 @@
   --tertiary-logo-color: #FFF;
   --quaternary-logo-color: #34545F;
   --quinary-logo-color: #34545F;
+
+  /* BORDER COLOR DARKMODE */
+  --nav-border-color: #000;
 
   /* IMAGE VISIBILITY DARKMDOE */
   --image-visible: none;

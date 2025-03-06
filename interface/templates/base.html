@@ -26,7 +26,7 @@
   <script type="text/javascript" src="{% static 'js/imagecheck-min.js' %}" defer></script>
   <script type="text/javascript" src="{% static 'js/theme-min.js' %}" defer></script>
   <script type="text/javascript" src="{% static 'js/initial-min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/mobile-menu-min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'js/header-min.js' %}" defer></script>
   <script type="text/javascript" src="{% static 'js/language-switch-min.js' %}" defer></script>
 
   {% block scripting %}
@@ -105,7 +105,7 @@
           </svg>
         </a>
         {% endif %}
-        <button class="toggle-menu" type="button">
+        <button class="toggle-menu" type="button" aria-controls="nav-controls" aria-expanded="false">
           <span class="open">Menu</span>
           <svg class="open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M4.1665 5.83333H15.2781M4.1665 10.2767H15.2781M4.1665 14.72H15.2781" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -116,17 +116,17 @@
           </svg>
         </button>
       </div>
-      <div class="nav-controls">
+      <div id="nav-controls" class="nav-controls">
         <nav>
           <ul class="nav-list">
-            <li class="nav-item {% if pagemenu == 'home' %}current{% endif %}">
-              <button type="button">
+            <li class="nav-item">
+              <button id="toggle-subnav" type="button" aria-controls="nav-sublist" aria-expanded="false">
                 <span>Test tools</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M18.859 9L12.43 15.43L6 9" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </button>
-              <ul class="nav-sublist">
+              <ul id="nav-sublist" class="nav-sublist">
                 <li class="nav-subitem">
                   <a href="/test-site">
                     <span>Test je website</span>
@@ -153,7 +153,7 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item {% if pagemenu == 'home' %}current{% endif %}">
+            <li class="nav-item {% if pagemenu == 'faqs' %}current{% endif %}">
               <a href="/faqs">{% include "string.html" with name="base faqs" %}</a>
             </li>
             <li class="nav-item {% if pagemenu == 'halloffame' %}current{% endif %}">
