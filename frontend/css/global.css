@@ -1,7 +1,7 @@
 /* Montserrat-400 */
 @font-face {
   font-display: swap;
-  font-family: 'Montserrat';
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
   src: url('/static/fonts/montserrat-400.woff2') format('woff2');
@@ -10,7 +10,7 @@
 /* Montserrat-500 */
 @font-face {
   font-display: swap;
-  font-family: 'Montserrat';
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
   src: url('/static/fonts/montserrat-500.woff2') format('woff2');
@@ -19,7 +19,7 @@
 /* Montserrat-700 */
 @font-face {
   font-display: swap;
-  font-family: 'Montserrat';
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 700;
   src: url('/static/fonts/montserrat-700.woff2') format('woff2');
@@ -28,23 +28,25 @@
 /* Roboto-400 */
 @font-face {
   font-display: swap;
-  font-family: 'Roboto';
+  font-family: Roboto;
   font-style: normal;
   font-weight: 400;
   src: url('/static/fonts/roboto-400.woff2') format('woff2');
 }
+
 /* Roboto-500 */
 @font-face {
   font-display: swap;
-  font-family: 'Roboto';
+  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   src: url('/static/fonts/roboto-500.woff2') format('woff2');
 }
+
 /* Roboto-700 */
 @font-face {
   font-display: swap;
-  font-family: 'Roboto';
+  font-family: Roboto;
   font-style: normal;
   font-weight: 700;
   src: url('/static/fonts/roboto-700.woff2') format('woff2');
@@ -57,7 +59,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat, sans-serif;
   background-color: var(--primary-bg-color);
 }
 
@@ -90,24 +92,25 @@ button {
   background-color: transparent;
 }
 
+.container {
+  max-inline-size: 1240px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
 section > .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
 }
 
-.container {
-  max-width: 1240px;
-  margin: 0 auto;
-}
-
 .skip-link {
   position: absolute;
   left: -9999px;
   z-index: 999;
-  padding: 1em;
-  background-color: black;
-  color: white;
+  padding: 16px;
+  background-color: #000;
+  color: #FFF;
   opacity: 0;
 }
 
@@ -119,4 +122,10 @@ section > .container {
 
 body:has(.nav-controls.active) .skip-link {
   display: none;
+}
+
+body:has(.nav-controls.active) {
+  @media (scripting: enabled) and (width <= 900px) {
+      overflow: clip;
+  }
 }
