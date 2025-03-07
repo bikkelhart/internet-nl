@@ -1,0 +1,231 @@
+:root {
+  /* NAV FONT MOBILE */
+  --nav-font: 700 1.25rem/1.5 'Montserrat', sans-serif;
+  --subnav-font: 700 1rem/1.5 'Montserrat', sans-serif;
+
+  /* HEADING FONT MOBILE */
+  --heading-font-xs: 700 0.875rem/1.5 'Montserrat', sans-serif;
+  --heading-font-s: 700 0.875rem/1.5 'Montserrat', sans-serif;
+  --heading-font-m: 700 1.25rem/1.5 'Montserrat', sans-serif;
+  --heading-font-l: 700 1.25rem/1.5 'Montserrat', sans-serif;
+  --heading-font-xl: 700 1.5rem/1.25 'Montserrat', sans-serif;
+
+  /* TEXT FONT MOBILE */
+  --body-font-xs: 400 0.875rem/1.5 'Roboto', sans-serif;
+  --body-font-s: 400 0.875rem/1.75 'Roboto', sans-serif;
+  --body-font-m: 400 1rem/1.25 'Roboto', sans-serif;
+
+  /* BUTTON FONT MOBILE */
+  --button-font-xs: 700 0.875rem/1.5 'Montserrat', sans-serif;
+  --button-font-s: 700 0.875rem/2 'Montserrat', sans-serif;
+  --button-font-m: 700 1rem/2.25 'Montserrat', sans-serif;
+  --button-font-l: 700 1rem/1.5 'Montserrat', sans-serif;
+
+  @media (width >= 900px) {
+    /* NAV FONT DESKTOP */
+    --nav-font: 700 1rem/2 'Montserrat', sans-serif;
+    --subnav-font: 700 1rem/2 'Montserrat', sans-serif;
+
+    /* HEADING FONT DESKTOP */
+    --heading-font-xs: 700 0.875rem/2 'Montserrat', sans-serif;
+    --heading-font-s: 700 1rem/1.5 'Montserrat', sans-serif;
+    --heading-font-m: 700 1.5rem/1.33 'Montserrat', sans-serif;
+    --heading-font-l: 700 2rem/1.25 'Montserrat', sans-serif;
+    --heading-font-xl: 700 2.5rem/1.25 'Montserrat', sans-serif;
+
+    /* TEXT FONT DESKTOP */
+    --body-font-xs: 400 0.875rem/1.5 'Roboto', sans-serif;
+    --body-font-s: 400 1rem/1.5 'Roboto', sans-serif;
+    --body-font-m: 400 1.125rem/1.75 'Roboto', sans-serif;
+
+    /* BUTTON FONT DESKTOP */
+    --button-font-xs: 700 0.875rem/1.5 'Montserrat', sans-serif;
+    --button-font-s: 700 1rem/2 'Montserrat', sans-serif;
+    --button-font-m: 700 1.125rem/2 'Montserrat', sans-serif;
+    --button-font-l: 700 1.25rem/1.5 'Montserrat', sans-serif;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* BACKGROUND COLOR LIGHTMODE */
+    --primary-bg-color: #FFF;
+    --secondary-bg-color: #EEF6F9;
+    --tertiary-bg-color: #FFAC40;
+    --quaternary-bg-color: #037584;
+    --quinary-bg-color: #FFF;
+    --senary-bg-color: #E3F0F5;
+    --octonary-bg-color: #E3F0F5;
+    --nonary-bg-color: #FFC170;
+    --denary-bg-color: #037584;
+    --undenary-bg-color: #34545F;
+
+    /* TEXT COLOR LIGHTMODE */
+    --primary-text-color: #34545F;
+    --secondary-text-color: #037584;
+    --tertiary-text-color: #191919;
+    --quaternary-text-color: #FFF;
+    --quinary-text-color: #037584;
+    --senary-text-color: #34545F;
+
+    /* BUTTON LIGHTMODE */
+    --primary-button-bg-color: #FFAC40;
+    --secondary-button-bg-color: transparent;
+    --primary-button-text-color: #191919;
+    --secondary-button-text-color: #34545F;
+
+    /* LOGO COLOR LIGHTMODE */
+    --primary-logo-color: #34545F;
+    --secondary-logo-color: #E98400;
+    --tertiary-logo-color: #FFF;
+    --quaternary-logo-color: #FFF;
+    --quinary-logo-color: #34545F;
+
+    /* BORDER COLOR LIGHTMODE */
+    --nav-border-color: #037584;
+
+    /* IMAGE VISIBLITY LIGHTMODE */
+    --image-visible: block;
+    --image-hidden: none;
+
+    /* ELLIPSE COLOR LIGHTMODE */
+    --ellipse-color: linear-gradient(135deg,#FFF,#E3F0F500) border-box;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* BACKGROUND COLOR DARKMODE */
+    --primary-bg-color: #191919;
+    --secondary-bg-color: #22363C;
+    --tertiary-bg-color: #22363C;
+    --quaternary-bg-color: #22363C;
+    --quinary-bg-color: #34545F;
+    --senary-bg-color: #191919;
+    --octonary-bg-color: #22363C;
+    --nonary-bg-color: #22363C;
+    --denary-bg-color: #34545F;
+    --undenary-bg-color: #191919;
+
+    /* TEXT COLOR DARKMODE */
+    --primary-text-color: #FFF;
+    --secondary-text-color: #FFF;
+    --tertiary-text-color: #FFF;
+    --quaternary-text-color: #FFF;
+    --quinary-text-color: #8BF1FF;
+    --senary-text-color: #22363C;
+
+    /* BUTTON DARKMODE */
+    --primary-button-bg-color: #FFAC40;
+    --secondary-button-bg-color: transparent;
+    --primary-button-text-color: #191919;
+    --secondary-button-text-color: #FFF;
+
+    /* LOGO DARKMODE */
+    --primary-logo-color: #FFF;
+    --secondary-logo-color: #FFF;
+    --tertiary-logo-color: #FFF;
+    --quaternary-logo-color: #34545F;
+    --quinary-logo-color: #34545F;
+
+    /* BORDER COLOR DARKMODE */
+    --nav-border-color: #000;
+    
+    /* IMAGE VISIBILITY DARKMODE */
+    --image-visible: none;
+    --image-hidden: block;
+
+    /* ELLIPSE COLOR DARKMODE */
+    --ellipse-color: linear-gradient(135deg,#34545F ,#22364C) border-box;
+  }
+}
+
+[data-theme="light"] {
+  /* BACKGROUND COLOR LIGHTMODE */
+  --primary-bg-color: #FFF;
+  --secondary-bg-color: #EEF6F9;
+  --tertiary-bg-color: #FFAC40;
+  --quaternary-bg-color: #037584;
+  --quinary-bg-color: #FFF;
+  --senary-bg-color: #E3F0F5;
+  --octonary-bg-color: #E3F0F5;
+  --nonary-bg-color: #FFC170;
+  --denary-bg-color: #037584;
+  --undenary-bg-color: #34545F;
+
+  /* TEXT COLOR LIGHTMODE */
+  --primary-text-color: #34545F;
+  --secondary-text-color: #037584;
+  --tertiary-text-color: #191919;
+  --quaternary-text-color: #FFF;
+  --quinary-text-color: #037584;
+  --senary-text-color: #34545F;
+
+  /* BUTTON LIGHTMODE */
+  --primary-button-bg-color: #FFAC40;
+  --secondary-button-bg-color: transparent;
+  --primary-button-text-color: #191919;
+  --secondary-button-text-color: #34545F;
+
+  /* LOGO COLOR LIGHTMODE */
+  --primary-logo-color: #34545F;
+  --secondary-logo-color: #E98400;
+  --tertiary-logo-color: #FFF;
+  --quaternary-logo-color: #FFF;
+  --quinary-logo-color: #34545F;
+
+  /* BORDER COLOR LIGHTMODE */
+  --nav-border-color: #037584;
+  
+  /* IMAGE VISIBILITY LIGHTMODe */
+  --image-visible: block;
+  --image-hidden: none;
+
+  /* ELLIPSE COLOR LIGHTMODE */
+  --ellipse-color: linear-gradient(135deg,#FFF,#E3F0F500) border-box;
+}
+
+[data-theme="dark"] {
+  /* BACKGROUND COLOR DARKMODE */
+  --primary-bg-color: #191919;
+  --secondary-bg-color: #22363C;
+  --tertiary-bg-color: #22363C;
+  --quaternary-bg-color: #22363C;
+  --quinary-bg-color: #34545F;
+  --senary-bg-color: #191919;
+  --octonary-bg-color: #22363C;
+  --nonary-bg-color: #22363C;
+  --denary-bg-color: #34545F;
+  --undenary-bg-color: #191919;
+
+  /* TEXT COLOR DARKMODE */
+  --primary-text-color: #FFF;
+  --secondary-text-color: #FFF;
+  --tertiary-text-color: #FFF;
+  --quaternary-text-color: #FFF;
+  --quinary-text-color: #8BF1FF;
+  --senary-text-color: #22363C;
+
+  /* BUTTON DARKMODE */
+  --primary-button-bg-color: #FFAC40;
+  --secondary-button-bg-color: transparent;
+  --primary-button-text-color: #191919;
+  --secondary-button-text-color: #FFF;
+
+  /* LOGO COLOR DARKMODE */
+  --primary-logo-color: #FFF;
+  --secondary-logo-color: #FFF;
+  --tertiary-logo-color: #FFF;
+  --quaternary-logo-color: #34545F;
+  --quinary-logo-color: #34545F;
+
+  /* BORDER COLOR DARKMODE */
+  --nav-border-color: #000;
+
+  /* IMAGE VISIBILITY DARKMDOE */
+  --image-visible: none;
+  --image-hidden: block;
+
+  /* ELLIPSE COLOR DARKMODE */
+  --ellipse-color: linear-gradient(135deg,#34545F ,#22364C) border-box;
+}
