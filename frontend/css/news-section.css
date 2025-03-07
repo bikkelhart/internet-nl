@@ -1,0 +1,21 @@
+.news-section {
+  .container {
+    gap: 24px;
+
+    @media (width >= 900px) {
+      gap: 48px;
+    }
+
+    h2 {
+      grid-column: span 12;
+      color: var(--primary-text-color);
+      font: var(--heading-font-l);
+      justify-self: center;
+    }
+
+    > a {
+      grid-column: span 12;
+      justify-self: center;
+    }
+  }
+}
