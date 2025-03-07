@@ -1,9 +1,8 @@
 .news-section {
-
   .container {
     gap: 24px;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       gap: 48px;
     }
 

@@ -11,7 +11,7 @@
     gap: 40px;
     width: 100%;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       flex-direction: row;
     }
   }
@@ -51,7 +51,7 @@ footer nav {
     grid-template-rows: auto;
     gap: 24px;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -68,7 +68,7 @@ footer nav {
     width: 24px;
     height: 24px;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       width: 32px;
       height: 32px;
     }
@@ -85,7 +85,7 @@ footer nav {
     padding: 32px 16px;
     width: 100%;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -98,7 +98,7 @@ footer nav {
   gap: 20px;
   flex-direction: column;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     flex-direction: row;
   }
 
