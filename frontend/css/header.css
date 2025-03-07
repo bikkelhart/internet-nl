@@ -3,20 +3,27 @@ header {
   top: 0;
   z-index: 1;
   background: var(--primary-bg-color);
-  box-shadow: 0px 0px 3px 0px var(--secondary-bg-color);
+
+  &.stuck {
+    border-bottom: 1px solid black;
+  }
 
   .container {
     display: flex;
     align-items: center;
-    padding: 20px 16px;
-    gap: 8px;
+    padding: 0;
     justify-content: space-between;
+    gap: 16px;
 
-    @media (min-width: 900px) {
-      flex-direction: row;
+    @media (width >= 900px) {
+      padding: 20px 16px;
     }
 
-    @media (min-width: 900px) and (max-width: 1100px) {
+    &:has(.active) {
+      padding: 0;
+    }
+
+    @media (900px <= width <= 1100px) {
       flex-wrap: wrap;
     }
 
@@ -26,18 +33,41 @@ header {
   }
 }
 
+.header-logo-toggle-controls {
+  display: flex;
+  justify-content: space-between;
+  background: var(--primary-bg-color);
+  z-index: 1;
+  width: 100%;
+  padding: 20px 16px;
+
+  @media (width >= 900px) {
+    width: auto;
+    padding: 0;
+  }
+}
+
+header:has(.active) .header-logo-toggle-controls {
+  padding: 20px 16px;
+  background: var(--primary-bg-color);
+  border-radius: 0 0 16px 16px;
+}
+
 .header-logo {
   display: flex;
   align-items: center;
-  z-index: 1;
+  transition: opacity 0.3s;
 
-  @media (min-width: 900px) {
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media (width >= 900px) {
     width: 182px;
     height: 40px;
   }
 
   svg {
-    
     .search-icon-background, 
     .big-text {
       fill: var(--primary-logo-color);
@@ -55,7 +85,7 @@ header {
       fill: var(--primary-logo-color);
       display: none;
 
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         display: initial;
       }
     }
@@ -64,32 +94,79 @@ header {
       fill: var(--secondary-logo-color);
       display: none;
 
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         display: initial;
       }
     }
   }
 }
 
+.toggle-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-text-color);
+  font: var(--button-font-m);
+  fill: currentcolor;
+
+  .close {
+    display: none;
+  }
+
+  @media (width >= 900px) {
+    display: none;
+  }
+
+  @media (scripting: none) {
+    display: none;
+  }
+}
+
+header:has(.active) {
+  .close {
+    display: initial;
+  }
+
+  .open {
+    display: none;
+  }
+}
+
 .nav-controls {
   align-items: center;
-  height: 100vh;
   width: 100%;
-  position: absolute;
   flex-direction: column;
-  top: 100%;
+  position: fixed;
+  height: 100vh;
+  top: 0;
   left: 0;
   background-color: var(--primary-bg-color);
-  display: none;
+  display: none;  
+  overflow: auto;
 
-  @media (min-width: 900px) {
+  @media (scripting: enabled) {
+    padding: 120px 16px 30px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+    @supports (transition-behavior: allow-discrete) {
+      transition: display 0.5s allow-discrete, opacity 0.5s allow-discrete, left 0.5s allow-discrete;
+      left: 100%;
+      opacity: 0;
+    }
+  }
+
+  @media (width >= 900px) {
     width: 100%;
-    height: auto;
-    position: initial;
     flex-direction: row;
+    position: initial;
+    height: auto;
     display: flex;
     justify-content: space-between;
     gap: 8px;
+    overflow: initial;
+    padding: 0;
+    opacity: 1;
   }
 
   @media (scripting: none) {
@@ -101,15 +178,19 @@ header {
 
 .nav-controls.active {
   display: flex;
-  padding: 20px 16px;
   align-items: start;
-  gap: 60px;
-}
+  gap: 40px;
+  background: var(--secondary-bg-color);
 
-body:has(.nav-controls.active) {
-  @media (scripting: enabled) {
-    @media (max-width: 900px) {
-      overflow: clip;
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (transition-behavior: allow-discrete) {
+      left: 0;
+      opacity: 1;
+      
+      @starting-style {
+        left: 100%;
+        opacity: 0;
+      }
     }
   }
 }
@@ -120,7 +201,7 @@ header nav {
   gap: 8px;
   width: 100%;
   
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     display: flex;
     align-items: center;
     height: auto;
@@ -133,7 +214,7 @@ header nav {
     width: 100%;
     gap: 40px;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       flex-direction: row;
       align-items: center;
       width: auto;
@@ -141,8 +222,17 @@ header nav {
     }
 
     @media (scripting: none) {
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-flow: row wrap;
+    }
+  }
+
+  .nav-item {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--nav-border-color);
+
+    @media (width >= 900px) {
+      padding-bottom: 0;
+      border-bottom: none;
     }
   }
 
@@ -150,52 +240,65 @@ header nav {
   .nav-item button {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 16px;
     color: var(--primary-text-color);
-    font: var(--button-font-s);
+    font: var(--nav-font);
     width: 100%;
-    
-    @media (scripting: enabled) {
-      font-size: 24px;
+    border-bottom: 2px solid transparent;
+    transition: border 0.3s;
+
+    &:hover {
+      @media (width >= 900px) {
+        border-bottom: 2px solid currentcolor;
+      }
     }
 
-    @media (min-width: 900px) {
+    @media (scripting: none) {
+      font-size: 1rem;
+    }
+
+    @media (width >= 900px) {
       gap: 4px;
-      font-size: initial;
+      width: auto;
+    }
+  }
+
+  .nav-item.current a,
+  .nav-item.current button {
+    @media (width >= 900px) {
+      border-bottom: 2px solid currentcolor;
     }
   }
 
   .nav-item:has(.nav-sublist) {
-
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       position: relative;
 
       &::after {
         content: "";
         position: absolute;
         left: 0;
-        width: 100%;
+        width: 150%;
         height: 20px;
         background: transparent;
-      }
-    }
-
-    > button > svg {
-      transform: rotate(270deg) scale(1.5);
-
-
-      @media (min-width: 900px) {
-        transform: rotate(0deg);
       }
     }
 
     .nav-sublist {
       display: none;
       flex-direction: column;
-      padding: 10px 24px;
-      gap: 24px;
+      gap: 32px;
 
-      @media (min-width: 900px) {
+      @media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+        @supports (transition-behavior: allow-discrete) {
+          opacity: 0;
+          max-height: 0;
+          transition: max-height 0.3s allow-discrete, opacity 0.3s allow-discrete, display 0.3s allow-discrete, padding 0.3s allow-discrete;
+        }
+      }
+
+      @media (width >= 900px) {
         gap: 16px;
         position: absolute;
         padding: 20px 24px;
@@ -207,70 +310,84 @@ header nav {
         left: 50%;
         margin-top: 20px;
       }
+
+      &.expanded {
+        display: flex;
+        padding-top: 20px;
+        
+        @media (prefers-reduced-motion: no-preference) {
+          @supports (transition-behavior: allow-discrete) {
+            opacity: 1;
+            max-height: 200px;
+
+            @starting-style {
+              opacity: 0;
+              max-height: 0;
+            }
+          }
+        }
+      }
     }
 
     &:focus-within .nav-sublist {
+      @media (scripting: none) {
         display: flex;
+      }
     }
 
     &:hover .nav-sublist {
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         display: flex;
+
+        @media (prefers-reduced-motion: no-preference) {
+          @supports (transition-behavior: allow-discrete) {
+            opacity: 1;
+            max-height: 200px;
+
+            @starting-style {
+              opacity: 0;
+              max-height: 0;
+            }
+          }
+        }
       }
     }
 
     .nav-subitem a {
       display: flex;
       justify-content: space-between;
+      font: var(--subnav-font);
       
-      @media (scripting: enabled) {
-        font-size: 20px;
-      }
-
-      @media (min-width: 900px) {
-        font-size: initial;
+      @media (scripting: none) {
+        font-size: 1rem;
       }
 
       svg {
         display: none;
 
-        @media (min-width: 900px) {
+        @media (width >= 900px) {
           display: initial;
           transform: rotate(270deg);
         }
       }
     }
   }
-}
 
-.toggle-menu {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--primary-text-color);
-  font: var(--button-font-m);
-  fill: currentColor;
+  #toggle-subnav svg {
+    transform: rotate(360deg) scale(1.25);
+    transition: 0.3s;
 
-  .close {
-    display: none;
-  }
-
-  &:has(+ .active) {
-    .open {
-      display: none;
+    @media (width >= 900px) {
+      transform: rotate(0deg);
     }
-
-    .close {
-      display: initial;
-    } 
   }
 
-  @media (min-width: 900px) {
-    display: none;
-  }
+  &:has(.nav-sublist.expanded) #toggle-subnav svg {
+    transform: rotate(180deg) scale(1.25);
 
-  @media (scripting: none) {
-    display: none;
+    @media (width >= 900px) {
+      transform: rotate(0deg);
+    }
   }
 }
 
@@ -278,7 +395,7 @@ header nav {
   display: flex;
   gap: 50px;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     display: flex;
     flex-direction: row;
     gap: 24px;
@@ -310,9 +427,10 @@ header nav {
     text-transform: uppercase;
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   button {
     color: var(--primary-text-color);
-    border: 1px solid currentColor;
+    border: 1px solid currentcolor;
     border-radius: 8px;
     padding: 2px;
 
@@ -322,14 +440,29 @@ header nav {
   }
 }
 
+.active .language-form select {
+  background: #FFF;
+  color: #34545F;
+  font-size: 1rem;
+
+  option {
+    color: #34545F;
+    font-size: 1rem;
+  }
+}
+
 .theme-button {
   display: flex;
   font: var(--button-font-s);
   color: var(--primary-text-color);
   gap: 8px;
+  align-items: center;
+
+  @media (scripting: none) {
+    cursor: default;
+  }
 
   .switch-container {
-    cursor: pointer;
     background-color: #BC6D07;
     border-radius: 16px;
     display: flex;
@@ -351,8 +484,11 @@ header nav {
   }
 }
 
-[data-theme="dark"] .theme-button {
+.active .theme-button {
+  font-size: 1rem;
+}
 
+[data-theme="dark"] .theme-button {
   .switch-container {
     justify-content: right;
     background-color: #34545F;
@@ -373,7 +509,6 @@ header nav {
 }
 
 [data-theme="light"] .theme-button {
-  
     .switch-container {
       justify-content: left;
       background-color: #BC6D07;
@@ -395,7 +530,6 @@ header nav {
 
 @media (scripting: none) and (prefers-color-scheme: dark) {
   .theme-button {
-    
     .switch-container {
       justify-content: right;
       background-color: #34545F;
@@ -418,7 +552,6 @@ header nav {
 
 @media (scripting: none) and (prefers-color-scheme: light) {
   .theme-button {
-    
     .switch-container {
       justify-content: left;
       background-color: #BC6D07;
