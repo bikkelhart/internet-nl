@@ -2,9 +2,9 @@
   background: var(--secondary-bg-color);
   overflow: clip;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     border-radius: 16px;
-    margin: 16px 16px 0 16px;
+    margin: 16px 16px 0;
   }
 
   .container {
@@ -13,7 +13,7 @@
     z-index: 0;
     padding: 40px 16px;
     
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       column-gap: 32px;
       row-gap: 24px;
       padding: 104px 16px;
@@ -30,7 +30,7 @@
   .ellipse-container {
     bottom: 60%;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       bottom: -25%;
       left: -10%;
     }
@@ -44,7 +44,7 @@
 .test-card-large {
   grid-column: span 12;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     grid-column: span 8;
     grid-row: span 2;
   }
@@ -59,7 +59,7 @@
     font-weight: 500;
     width: fit-content;
     
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       display: flex;
     }
   }

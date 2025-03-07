@@ -9,18 +9,15 @@
   font: var(--button-font-s);
 }
 
-
 .primary-button {
   background: var(--primary-button-bg-color);
   color: var(--primary-button-text-color);
 }
 
-
 .secondary-button {
   border: 2px solid var(--secondary-button-text-color);
   color: var(--secondary-button-text-color);
 }
-
 
 .primary-rounded-button,
 .secondary-rounded-button {
@@ -32,16 +29,13 @@
   padding: 6px;
 }
 
-
 .primary-rounded-button {
   background: var(--primary-button-bg-color);
 }
 
-
 .secondary-rounded-button {
-  background: #FFFFFF;
+  background: #FFF;
 }
-
 
 .test-card-large {
   background: var(--primary-bg-color);
@@ -52,10 +46,9 @@
   justify-content: space-between;
 
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     padding: 48px;
   }
-
 
   h2 {
     display: flex;
@@ -66,18 +59,15 @@
     padding-bottom: 24px;
   }
 
-
   form {
     display: flex;
     flex-direction: column;
 
-
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       flex-direction: row;
       gap: 24px;
     }
   }
-
 
   label {
     display: flex;
@@ -87,12 +77,11 @@
     font: var(--heading-font-xs);
     padding-bottom: 16px;
     
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       width: 50%;
       padding-bottom: 0px;
     }
   }
-
 
   input {
     padding: 8px 16px;
@@ -113,7 +102,7 @@
     padding: 10px 16px;
 
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       width: 50%;
       align-self: end;
       height: fit-content;
@@ -133,7 +122,7 @@
   justify-content: space-between;
 
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     grid-column: span 4;
     grid-row: span 1;
     padding: 36px 24px;
@@ -152,7 +141,7 @@
     flex-direction: column;
 
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       gap: 8px;
     }
 
@@ -182,7 +171,7 @@
     border-width: 48px;
 
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       border-width: 96px;
     }
 
@@ -192,7 +181,7 @@
       height: 617.5px;
 
 
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         width: 1235px;
         height: 1235px;
       }
@@ -204,7 +193,7 @@
       height: 468px;
 
 
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         width: 936px;
         height: 936px;
       }
@@ -216,7 +205,7 @@
       height: 318px;
 
 
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         width: 636px;
         height: 636px;
       }
@@ -250,7 +239,7 @@
   grid-template-rows: auto;
   gap: 8px;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     grid-template-columns: repeat(5, 1fr);
     gap: 24px;
   }
