@@ -66,14 +66,9 @@ main {
   flex-direction: column;
   gap: 40px;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     gap: 80px;
   }
-}
-
-section {
-  padding-left: 16px;
-  padding-right: 16px;
 }
 
 ul {
