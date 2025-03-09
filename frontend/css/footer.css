@@ -1,6 +1,6 @@
 
 .footer-nav {
-  background: var(--quaternary-bg-color);
+  background: var(--footer-bg-color);
   width: 100%;
 
   .container {
@@ -11,35 +11,39 @@
     gap: 40px;
     width: 100%;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       flex-direction: row;
     }
   }
 }
 
-
 .footer-logo {
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
   svg {
-    
     .search-icon-background, 
     .big-text {
-      fill: var(--tertiary-logo-color);
+      fill: var(--logo-color-4);
     }
 
     .small-grey-text {
-      fill: var(--tertiary-logo-color);
+      fill: var(--logo-color-4);
     }
 
     .search-icon {
-      fill: var(--quinary-logo-color);
+      fill: var(--logo-color-5);
     }
 
     .search-icon-inner {
-      fill: var(--tertiary-logo-color);
+      fill: var(--logo-color-4);
     }
 
     .small-orange-text {
-      fill: var(--tertiary-logo-color);
+      fill: var(--logo-color-4);
     }
   }
 }
@@ -51,7 +55,7 @@ footer nav {
     grid-template-rows: auto;
     gap: 24px;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -60,15 +64,24 @@ footer nav {
     display: flex;
     align-items: center;
     gap: 16px;
-    color: var(--quaternary-text-color);
-    font: var(--button-font-l);
+    font: var(--footer-link);
+    color: var(--footer-text-color);
+
+    span {
+      border-bottom: 2px solid var(--transparent-100);
+      transition: 0.3s;
+    }
+
+    &:hover span {
+      border-bottom: 2px solid currentcolor;
+    }
   }
 
   .nav-item a svg {
     width: 24px;
     height: 24px;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       width: 32px;
       height: 32px;
     }
@@ -76,7 +89,7 @@ footer nav {
 }
 
 .footer-bar {
-  background: var(--quinary-bg-color);
+  background: var(--footer-bar-bg-color);
 
   .container {
     display: flex;
@@ -85,7 +98,7 @@ footer nav {
     padding: 32px 16px;
     width: 100%;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -98,13 +111,13 @@ footer nav {
   gap: 20px;
   flex-direction: column;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     flex-direction: row;
   }
 
   .footer-link a {
-    color: var(--primary-text-color);
-    font: var(--button-font-s);
+    color: var(--footer-bar-text-color);
+    font: var(--footer-bar-link);
     text-decoration: underline;
   }
 }
