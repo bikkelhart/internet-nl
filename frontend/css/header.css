@@ -2,10 +2,12 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: var(--primary-bg-color);
+  background: var(--nav-bg-color);
+  transition: 0.3s;
 
   &.stuck {
-    border-bottom: 1px solid black;
+    border-bottom: var(--nav-sticky-border);
+    box-shadow: var(--nav-sticky-shadow);
   }
 
   .container {
@@ -16,7 +18,7 @@ header {
     gap: 16px;
 
     @media (width >= 900px) {
-      padding: 20px 16px;
+      padding-block: 36px;
     }
 
     &:has(.active) {
@@ -36,7 +38,7 @@ header {
 .header-logo-toggle-controls {
   display: flex;
   justify-content: space-between;
-  background: var(--primary-bg-color);
+  background: var(--nav-bg-color);
   z-index: 1;
   width: 100%;
   padding: 20px 16px;
@@ -49,7 +51,6 @@ header {
 
 header:has(.active) .header-logo-toggle-controls {
   padding: 20px 16px;
-  background: var(--primary-bg-color);
   border-radius: 0 0 16px 16px;
 }
 
@@ -70,19 +71,19 @@ header:has(.active) .header-logo-toggle-controls {
   svg {
     .search-icon-background, 
     .big-text {
-      fill: var(--primary-logo-color);
+      fill: var(--logo-color-3);
     }
 
     .search-icon {
-      fill: var(--quaternary-logo-color);
+      fill: var(--logo-color-1);
     }
 
     .search-icon-inner {
-      fill: var(--secondary-logo-color);
+      fill: var(--logo-color-2);
     }
 
     .small-grey-text {
-      fill: var(--primary-logo-color);
+      fill: var(--logo-color-3);
       display: none;
 
       @media (width >= 900px) {
@@ -91,7 +92,7 @@ header:has(.active) .header-logo-toggle-controls {
     }
 
     .small-orange-text {
-      fill: var(--secondary-logo-color);
+      fill: var(--logo-color-2);
       display: none;
 
       @media (width >= 900px) {
@@ -105,8 +106,8 @@ header:has(.active) .header-logo-toggle-controls {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--primary-text-color);
-  font: var(--button-font-m);
+  color: var(--nav-text-color);
+  font: var(--nav-button);
   fill: currentcolor;
 
   .close {
@@ -140,7 +141,7 @@ header:has(.active) {
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: var(--primary-bg-color);
+  background: var(--mobile-nav-bg-color);
   display: none;  
   overflow: auto;
 
@@ -167,6 +168,7 @@ header:has(.active) {
     overflow: initial;
     padding: 0;
     opacity: 1;
+    background-color: var(--nav-bg-color);
   }
 
   @media (scripting: none) {
@@ -180,7 +182,6 @@ header:has(.active) {
   display: flex;
   align-items: start;
   gap: 40px;
-  background: var(--secondary-bg-color);
 
   @media (prefers-reduced-motion: no-preference) {
     @supports (transition-behavior: allow-discrete) {
@@ -228,7 +229,7 @@ header nav {
 
   .nav-item {
     padding-bottom: 16px;
-    border-bottom: 1px solid var(--nav-border-color);
+    border-bottom: var(--mobile-nav-border);
 
     @media (width >= 900px) {
       padding-bottom: 0;
@@ -242,10 +243,10 @@ header nav {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    color: var(--primary-text-color);
-    font: var(--nav-font);
+    color: var(--nav-text-color);
+    font: var(--nav-link);
     width: 100%;
-    border-bottom: 2px solid transparent;
+    border-bottom: 2px solid var(--transparent-100);
     transition: border 0.3s;
 
     &:hover {
@@ -281,7 +282,7 @@ header nav {
         left: 0;
         width: 150%;
         height: 20px;
-        background: transparent;
+        background: var(--transparent-100);
       }
     }
 
@@ -302,7 +303,7 @@ header nav {
         gap: 16px;
         position: absolute;
         padding: 20px 24px;
-        background-color: var(--secondary-bg-color);
+        background-color: var(--dropdown-bg-color);
         border-radius: 8px;
         width: max-content;
         justify-content: space-between;
@@ -356,7 +357,7 @@ header nav {
     .nav-subitem a {
       display: flex;
       justify-content: space-between;
-      font: var(--subnav-font);
+      font: var(--subnav-link);
       
       @media (scripting: none) {
         font-size: 1rem;
@@ -412,24 +413,33 @@ header nav {
     cursor: pointer;
     padding: 8px;
     border-radius: 8px;
-    background-color: var(--secondary-bg-color);
+    background: var(--mobile-lang-bg-color);
+    color: var(--mobile-lang-text-color);
     border: none;
     border-right: 8px solid transparent;
     align-items: center;
-    color: var(--primary-text-color);
-    font: var(--button-font-xs);
+    font: var(--nav-button);
     text-transform: uppercase;
+
+    @media (width >= 900px) {
+      background-color: var(--lang-bg-color);
+      color: var(--nav-text-color);
+    }
   }
 
   option {
-    color: var(--primary-text-color);
-    font: var(--button-font-xs);
+    color: var(--mobile-lang-text-color);
+    font: var(--nav-button);
     text-transform: uppercase;
+
+    @media (width >= 900px) {
+      color: var(--nav-text-color);
+    }
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
   button {
-    color: var(--primary-text-color);
+    color: var(--nav-text-color);
     border: 1px solid currentcolor;
     border-radius: 8px;
     padding: 2px;
@@ -440,21 +450,10 @@ header nav {
   }
 }
 
-.active .language-form select {
-  background: #FFF;
-  color: #34545F;
-  font-size: 1rem;
-
-  option {
-    color: #34545F;
-    font-size: 1rem;
-  }
-}
-
 .theme-button {
   display: flex;
-  font: var(--button-font-s);
-  color: var(--primary-text-color);
+  font: var(--nav-button);
+  color: var(--nav-text-color);
   gap: 8px;
   align-items: center;
 
@@ -463,7 +462,7 @@ header nav {
   }
 
   .switch-container {
-    background-color: #BC6D07;
+    background-color: var(--theme-button-bg-color);
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -477,21 +476,16 @@ header nav {
     width: 26px;
     border-radius: 100%;
     margin-left: 4px;
-    background-color: #FFF;
+    background-color: var(--theme-button-color);
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
 
-.active .theme-button {
-  font-size: 1rem;
-}
-
 [data-theme="dark"] .theme-button {
   .switch-container {
     justify-content: right;
-    background-color: #34545F;
   }
 
   .switch {
@@ -511,7 +505,6 @@ header nav {
 [data-theme="light"] .theme-button {
     .switch-container {
       justify-content: left;
-      background-color: #BC6D07;
     }
   
     .switch {
@@ -532,7 +525,6 @@ header nav {
   .theme-button {
     .switch-container {
       justify-content: right;
-      background-color: #34545F;
     }
 
     .switch {
@@ -554,7 +546,6 @@ header nav {
   .theme-button {
     .switch-container {
       justify-content: left;
-      background-color: #BC6D07;
     }
 
     .switch {
