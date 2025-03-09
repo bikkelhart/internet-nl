@@ -20,7 +20,7 @@
 }
 
 .secondary-button {
-  color: var(--button-text-color-1);
+  color: var(--button-text-color-2);
   border: 2px solid currentcolor;
 
   &:hover {

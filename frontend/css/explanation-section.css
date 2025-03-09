@@ -8,6 +8,32 @@
     }
   }
 
+  .content {
+    grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (width >= 900px) {
+      grid-column: span 5;
+      gap: 32px;
+    }
+
+    h2 {
+      font: var(--section-header-2);
+      color: var(--heading-color-1);
+    }
+
+    h2 span {
+      color: var(--heading-color-2);
+    }
+
+    p {
+      font: var(--section-body-2);
+      color: var(--body-color-1);
+    }
+  }
+
   .button-container.mobile {
     grid-column: span 12;
     display: flex;
@@ -33,34 +59,8 @@
 
   .button-container p {
     text-align: center;
-    font: var(--button-font-xs);
+    font: var(--section-link-2);
     font-weight: 500;
-  }
-
-  .content {
-    grid-column: span 12;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-    @media (width >= 900px) {
-      grid-column: span 5;
-      gap: 32px;
-    }
-
-    h2 {
-      font: var(--heading-font-m);
-      color: var(--primary-text-color);
-    }
-
-    h2 span {
-      color: var(--quinary-text-color);
-    }
-
-    p {
-      font: var(--body-font-m);
-      color: var(--tertiary-text-color);
-    }
   }
 }
 
@@ -74,8 +74,9 @@
   padding-bottom: 20px;
 
   @media (scripting: enabled) {
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -99,13 +100,18 @@
     flex-direction: column;
     gap: 8px;
     border-radius: 8px;
-    background: var(--nonary-bg-color);
+    background: var(--card-bg-color-2);
     position: relative;
     overflow: clip;
     z-index: 0;
 
     @media (width >= 900px) {
       padding: 48px 24px 32px;
+    }
+
+    .ellipse {
+      background: var(--ellipse-color-1);
+
     }
 
     &:nth-child(1) {
@@ -157,20 +163,17 @@
         }
       }
     }
-
-    .ellipse {
-      background: var(--ellipse-color);
-    }
   }
 
   h3 {
-    font: var(--heading-font-s);
-    color: var(--tertiary-text-color);
+    font: var(--card-header-3);
+    color: var(--card-heading-color-2);
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   p {
-    font: var(--body-font-xs);
-    color: var(--tertiary-text-color);
+    font: var(--card-body-2);
+    color: var(--card-body-color-2);
   }
 }
 
@@ -194,7 +197,7 @@
 .dot {
   width: 8px;
   height: 8px;
-  background-color: gray;
+  background-color: var(--green-400);
   border-radius: 50%;
   transition: background-color 0.3s;
   display: flex;
@@ -202,7 +205,7 @@
   justify-content: center;
 
   &.active {
-    background-color: #FFAC40;
+    background-color: var(--orange-300);
     width: 15px;
     height: 15px;
   }
