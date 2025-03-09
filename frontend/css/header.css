@@ -3,7 +3,7 @@ header {
   top: 0;
   z-index: 1;
   background: var(--nav-bg-color);
-  transition: 0.3s;
+  transition: border 0.3s, box-shadow 0.3s;
 
   &.stuck {
     border-bottom: var(--nav-sticky-border);
