@@ -346,10 +346,13 @@
           <li class="footer-link">
             <a href="/copyright">Auteursrecht</a>
           </li>
+          {% if "HAS_ACCESSIBILITY_PAGE"|get_settings_value %}
           <li class="footer-link">
             <a href="/accessibility">Toegankelijkheid</a>
           </li>
+          {% endif %}
         </ul>
+        {% if "INTERNETNL_BRANDING"|get_settings_value %}
         <ul class="footer-socials">
           <li class="footer-social">
             <a href="https://x.com/internet_nl/" target="_blank" aria-label="Ga naar onze X profiel">
@@ -376,6 +379,7 @@
             </a>
           </li>
         </ul>
+        {% endif %}
       </div>
     </div>
   </footer>
