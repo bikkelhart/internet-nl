@@ -202,6 +202,8 @@
     --logo-color-1: var(--white-100);
     --logo-color-2: var(--orange-400);
     --logo-color-3: var(--green-500);
+    --logo-color-4: var(--white-100);
+    --logo-color-5: var(--green-500);
 
     /* ACCORDION COLORS LIGHTMODE */
     --accordion-bg-color: var(--white-100);
@@ -284,7 +286,9 @@
     --logo-color-1: var(--black-100);
     --logo-color-2: var(--white-100);
     --logo-color-3: var(--white-100);
-
+    --logo-color-4: var(--white-100);
+    --logo-color-5: var(--green-500);
+    
     /* ACCORDION COLORS DARKMODE */
     --accordion-bg-color: var(--black-200);
     --accordion-heading-color: var(--white-100);
@@ -365,6 +369,8 @@
   --logo-color-1: var(--white-100);
   --logo-color-2: var(--orange-400);
   --logo-color-3: var(--green-500);
+  --logo-color-4: var(--white-100);
+  --logo-color-5: var(--green-500);
 
   /* ACCORDION COLORS LIGHTMODE */
   --accordion-bg-color: var(--white-100);
@@ -445,6 +451,8 @@
   --logo-color-1: var(--black-100);
   --logo-color-2: var(--white-100);
   --logo-color-3: var(--white-100);
+  --logo-color-4: var(--white-100);
+  --logo-color-5: var(--green-500);
 
   /* ACCORDION COLORS DARKMODE */
   --accordion-bg-color: var(--black-200);
