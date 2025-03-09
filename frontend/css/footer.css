@@ -6,13 +6,14 @@
   .container {
     display: flex;
     justify-content: space-between;
-    padding: 40px 16px;
+    padding-block: 40px;
     flex-direction: column;
     gap: 40px;
     width: 100%;
 
     @media (width >= 900px) {
       flex-direction: row;
+      padding-block: 64px;
     }
   }
 }
@@ -95,13 +96,14 @@ footer nav {
     display: flex;
     gap: 32px;
     flex-direction: column;
-    padding: 32px 16px;
+    padding-block: 32px;
     width: 100%;
 
     @media (width >= 900px) {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      padding-block: 16px;
     }
   }
 }
