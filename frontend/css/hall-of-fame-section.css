@@ -1,5 +1,5 @@
 .hall-of-fame-section {
-  background: var(--secondary-bg-color);
+  background: var(--bg-color-2);
   border-radius: 16px;
   overflow: clip;
   margin: 0 16px;
@@ -8,11 +8,11 @@
     row-gap: 24px;
     position: relative;
     z-index: 0;
-    padding: 32px 16px;
+    padding-block: 32px;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       row-gap: 48px;
-      padding: 64px 16px;
+      padding-block: 64px;
     }
 
     .button-container {
@@ -22,7 +22,7 @@
       justify-content: center;
       gap: 8px;
 
-      @media (min-width: 900px) {
+      @media (width >= 900px) {
         flex-direction: row;
         gap: 24px;
       }
@@ -36,23 +36,23 @@
     flex-direction: column;
     text-align: center;
     
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       grid-column: 3 / 11;
       gap: 16px;
     }
 
     h2 {
-      font: var(--heading-font-xs);
-      color: var(--quinary-text-color);
+      font: var(--section-header-6);
+      color: var(--heading-color-2);
     }
 
     p {
-      font: var(--heading-font-s);
-      color: var(--tertiary-text-color);
+      font: var(--section-header-5);
+      color: var(--heading-color-3);
     }
 
     span {
-      color: var(--quinary-text-color);
+      color: var(--heading-color-2);
     }
   }
 
@@ -60,7 +60,7 @@
     display: none;
     bottom: 60%;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       bottom: -25%;
       right: -10%;
       display: flex;
@@ -68,7 +68,7 @@
 
     .ellipse {
       transform: scaleX(-1);
-      background: var(--ellipse-color);
+      background: var(--ellipse-color-1);
     }
   }
 }
