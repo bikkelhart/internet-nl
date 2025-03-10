@@ -82,6 +82,7 @@
   --card-header-5: var(--heading-font-xxs);
   --card-body-1: var(--body-font-xxs);
   --card-body-2: var(--body-font-xxs);
+  --card-body-3: var(--body-font-xs);
   --card-input-1: var(--body-font-s);
 
   /* ACCORDION FONTS MOBILE */
@@ -122,6 +123,7 @@
     --card-header-5: var(--heading-font-xxs);
     --card-body-1: var(--body-font-xs);
     --card-body-2: var(--body-font-xxs);
+    --card-body-3: var(--body-font-xs);
     --card-input-1: var(--body-font-s);
 
     /* ACCORDION FONTS DESKTOP */

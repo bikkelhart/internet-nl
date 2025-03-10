@@ -168,6 +168,7 @@
       </div>
     </div>
   </section>
+  
   <section class="about-section">
     <div class="container">
       <h2>Onze missie</h2>
@@ -223,7 +224,7 @@
           {% expand "article {{article}} date" as articledate %}
           {% expand "article {{article}} lead" as articlelead %}
         <li>
-          <a href="/article{{article}}">
+          <a href="/article/{{article}}">
             <div class="content">
               <p>{% include "string.html" with name=articledate %}</p>
               <h3>{% include "string.html" with name=articletitle %}</h3>
@@ -244,7 +245,7 @@
       </a>
     </div>
   </section>
-  
+
       <section class="block news">
         <h2>{% include "string.html" with name="base news" %}</h2>
         <ul>
