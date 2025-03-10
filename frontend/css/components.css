@@ -115,6 +115,30 @@
     }
   }
 
+  .mail-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      padding-left: 50px;
+      width: 100%;
+    }
+
+    .mail-icon-container {
+      position: absolute;
+      pointer-events: none;
+      background-color: white;
+      padding: 6px;
+      height: calc(100% - 2px);
+      left: 2px;
+      border-right: 1px solid currentcolor;
+      border-radius: 4px 0 0 4px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
   button {
     padding: 10px 16px;
 
