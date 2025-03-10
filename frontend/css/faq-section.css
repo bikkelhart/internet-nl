@@ -1,11 +1,11 @@
 .faq-section {
   overflow: clip;
-  background: linear-gradient(to bottom, var(--secondary-bg-color) 65%, transparent 65%);
+  background: linear-gradient(to bottom, var(--bg-color-2) 65%, transparent 65%);
   margin-bottom: 40px;
 
   @media (width >= 900px) {
     margin-bottom: 80px;
-    background: linear-gradient(to right, var(--secondary-bg-color) 80%, transparent 80%);
+    background: linear-gradient(to right, var(--bg-color-2) 80%, transparent 80%);
   }
 
   .container {
@@ -20,8 +20,8 @@
     h2 {
       grid-column: span 12;
       padding-bottom: 24px;
-      font: var(--heading-font-m);
-      color: var(--primary-text-color);
+      font: var(--section-header-2);
+      color: var(--heading-color-1);
 
       @media (width >= 900px) {
         grid-column: span 7;
@@ -31,15 +31,13 @@
 
     > a {
       grid-column: span 12;
-      margin-top: 16px;
-      margin-bottom: 32px;
+      margin-block: 16px 32px;
       justify-self: center;
 
       @media (width >= 900px) {
         grid-column: span 7;
         justify-self: start;
-        margin-top: 24px;
-        margin-bottom: 0;
+        margin-block: 24px 0;
       }
     }
   }
@@ -56,7 +54,7 @@
     }
 
     .ellipse {
-      background: var(--ellipse-color);
+      background: var(--ellipse-color-1);
     }
   }
 }
@@ -64,7 +62,7 @@
 .faq-item {
   grid-column: span 12;
   margin-bottom: 8px;
-  background: var(--primary-bg-color);
+  background: var(--accordion-bg-color);
   border-radius: 8px;
   appearance: none;
   
@@ -74,12 +72,31 @@
   }
 
   p {
-    padding: 0 16px 16px 16px;
-    font: var(--body-font-s);
-    color: var(--primary-text-color);
+    padding: 0 16px 16px;
+    font: var(--accordion-body-1);
+    color: var(--accordion-body-color);
+
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (transition-behavior: allow-discrete) {
+        transition: display 0.5s allow-discrete, opacity 0.5s allow-discrete;
+        opacity: 0;
+      }
+    }
   }
 
   &[open] {
+    p {
+      @media (prefers-reduced-motion: no-preference) {
+        @supports (transition-behavior: allow-discrete) {
+          opacity: 1;
+          
+          @starting-style {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    
     svg {
       transform: rotate(180deg);
     }
@@ -88,8 +105,8 @@
   summary {
     cursor: pointer;
     padding: 16px;
-    font: var(--heading-font-s);
-    color: var(--primary-text-color);
+    font: var(--accordion-header-1);
+    color: var(--accordion-heading-color);
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -104,9 +121,8 @@
 .contact-card {
   grid-column: span 12;
   padding: 32px 16px;
-  background: var(--denary-bg-color);
+  background: var(--card-bg-color-4);
   border-radius: 8px;
-  color: #FFFFFF;
   align-self: start;
 
   @media (width >= 900px) {
@@ -116,17 +132,18 @@
   }
 
   h3 {
-    font: var(--heading-font-m);
+    font: var(--card-header-1);
+    color: var(--card-heading-color-4);
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   > p {
-    font: var(--body-font-s);
-    padding-bottom: 16px;
-    padding-top: 8px;
+    font: var(--card-body-1);
+    color: var(--card-body-color-4);
+    padding-block: 8px 16px;
 
     @media (width >= 900px) {
-      padding-bottom: 32px;
-      padding-top: 16px;
+      padding-block: 16px 32px
     }
   }
 
@@ -137,9 +154,9 @@
   }
 
   li {
-    
+    /* stylelint-disable-next-line no-descending-specificity */
     a {
-      background: var(--undenary-bg-color);
+      background: var(--button-bg-color-3);
       border-radius: 8px;
       padding: 16px;
       color: inherit;
@@ -153,11 +170,14 @@
       gap: 8px;
       align-items: center;
       padding-bottom: 8px;
-      font: var(--heading-font-s);
+      font: var(--card-header-3);
+      color: var(--card-heading-color-4);
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     p {
-      font: var(--body-font-s);
+      font: var(--card-body-1);
+      color: var(--card-body-color-4);
     }
   }
 }
