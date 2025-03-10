@@ -81,10 +81,15 @@
   form {
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     @media (width >= 900px) {
       flex-direction: row;
       gap: 24px;
+
+      &#form-connection-test {
+        width: 50%;
+      }
     }
   }
 
@@ -139,6 +144,19 @@
     }
   }
 
+  .button-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    flex-direction: column;
+
+    @media (width >= 900px) {
+      flex-direction: row;
+      gap: 24px;
+    }
+  }
+
   button {
     padding: 10px 16px;
 
@@ -146,6 +164,30 @@
       width: 50%;
       align-self: end;
       height: fit-content;
+
+      &.connection-button {
+        width: 100%;
+      }
+    }
+  }
+
+  .secondary-button {
+    color: var(--button-text-color-2);
+    font: var(--button-link-font-xs);
+    gap: 8px;
+    transition: 0.3s;
+    align-items: center;
+    margin-top: 0;
+    border: 2px solid currentcolor;
+    display: flex;
+    width: 100%;
+
+    @media (width >= 900px) {
+      width: 50%;
+    }
+
+    &:hover {
+      border: 2px solid var(--button-bg-color-hover-2);
     }
   }
 }
