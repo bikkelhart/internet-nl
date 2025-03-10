@@ -71,6 +71,11 @@
     color: var(--card-heading-color-1);
     font: var(--card-header-1);
     padding-bottom: 24px;
+
+    svg {
+      min-width: 32px;
+      min-height: 32px;
+    }
   }
 
   form {
