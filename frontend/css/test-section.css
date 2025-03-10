@@ -1,27 +1,26 @@
 .test-section {
-  background: var(--secondary-bg-color);
+  background: var(--bg-color-2);
   overflow: clip;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     border-radius: 16px;
-    margin: 16px 16px 0 16px;
+    margin: 16px 16px 0;
   }
 
   .container {
     row-gap: 8px;
     position: relative;
     z-index: 0;
-    padding: 40px 16px;
+    padding-block: 40px;
     
-    @media (min-width: 900px) {
-      column-gap: 32px;
-      row-gap: 24px;
-      padding: 104px 16px;
+    @media (width >= 900px) {
+      gap: 24px 32px;
+      padding-block: 104px;
     }
 
     h1 {
-      font: var(--heading-font-xl);
-      color: var(--primary-text-color);
+      font: var(--page-title);
+      color: var(--heading-color-1);
       grid-column: span 12;
       padding-bottom: 8px;
     }
@@ -30,13 +29,13 @@
   .ellipse-container {
     bottom: 60%;
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       bottom: -25%;
       left: -10%;
     }
 
     .ellipse {
-      background: var(--ellipse-color);
+      background: var(--ellipse-color-1);
     }
   }
 }
@@ -44,7 +43,7 @@
 .test-card-large {
   grid-column: span 12;
 
-  @media (min-width: 900px) {
+  @media (width >= 900px) {
     grid-column: span 8;
     grid-row: span 2;
   }
@@ -54,12 +53,18 @@
     margin-top: 24px;
     align-items: center;
     gap: 16px;
-    color: var(--primary-text-color);
-    font: var(--button-font-xs);
+    color: var(--card-body-color-1);
+    font: var(--section-link-2);
     font-weight: 500;
     width: fit-content;
+    border-bottom: 1px solid var(--transparent-100);
+    transition: 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid currentcolor;
+    }
     
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       display: flex;
     }
   }
