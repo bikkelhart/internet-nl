@@ -385,7 +385,7 @@
 
   /* IMAGE VISIBILITY LIGHTMODE */
   --image-visible: block;
-  --image-hidden: hidden;
+  --image-hidden: none;
 }
 
 [data-theme="dark"] {
