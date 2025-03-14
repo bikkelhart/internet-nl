@@ -45,6 +45,7 @@
   background: var(--accordion-bg-color);
   border-radius: 8px;
   appearance: none;
+  overflow: hidden;
   
   @media (width >= 900px) {
     grid-column: span 7;
@@ -55,24 +56,24 @@
     padding: 0 16px 16px;
     font: var(--accordion-body-1);
     color: var(--accordion-body-color);
+  }
 
+  &::details-content {
     @media (prefers-reduced-motion: no-preference) {
       @supports (transition-behavior: allow-discrete) {
-        transition: display 0.5s allow-discrete, opacity 0.5s allow-discrete;
+        transition: height 0.3s allow-discrete, opacity 0.3s allow-discrete, content-visibility 0.3s allow-discrete;
         opacity: 0;
+        height: 0;
       }
     }
   }
 
   &[open] {
-    p {
+    &::details-content {
       @media (prefers-reduced-motion: no-preference) {
         @supports (transition-behavior: allow-discrete) {
           opacity: 1;
-          
-          @starting-style {
-            opacity: 0;
-          }
+          height: auto;
         }
       }
     }
