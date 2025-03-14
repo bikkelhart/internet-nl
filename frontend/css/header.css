@@ -405,23 +405,38 @@ header nav {
 .language-form {
   display: flex;
   gap: 8px;
+  position: relative;
 
   select {
     display: flex;
-    position: relative;
     cursor: pointer;
-    padding: 8px;
-    border-radius: 8px;
-    background: var(--nav-mobile-lang-bg-color);
     color: var(--nav-mobile-lang-text-color);
     border: none;
-    border-right: 8px solid var(--transparent-100);
     align-items: center;
     font: var(--nav-button);
     text-transform: uppercase;
+    appearance: none;
+    padding: 2px 30px 2px 8px;
+    background: var(--nav-mobile-lang-bg-color);
+    border-radius: 8px;
 
     @media (width >= 900px) {
       background-color: var(--nav-lang-bg-color);
+      color: var(--nav-text-color);
+    }
+  }
+
+  .select-icon {
+    position: absolute;
+    top: 49%;
+    right: 4px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    min-height: 20px;
+    min-width: 20px;
+    color: var(--nav-mobile-lang-text-color);
+    
+    @media (width >= 900px) {
       color: var(--nav-text-color);
     }
   }
