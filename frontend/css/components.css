@@ -8,6 +8,11 @@
   justify-content: center;
   font: var(--button-link-font-xs);
   transition: 0.3s;
+  width: 100%;
+
+  @media (width >= 900px) {
+    width: auto;
+  }
 }
 
 .primary-button {
@@ -51,6 +56,23 @@
   background: var(--button-bg-color-5);
 }
 
+.button-container {
+  display: flex;
+  align-items: center;
+  grid-column: span 12;
+  gap: 8px;
+  flex-direction: column;
+
+  &.center {
+    justify-content: center;
+  }
+
+  @media (width >= 900px) {
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
 .test-card-large {
   background: var(--card-bg-color-1);
   padding: 32px 16px;
@@ -58,10 +80,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  grid-column: span 12;
 
   @media (width >= 900px) {
     padding: 48px;
+    grid-column: 2 / 12;
   }
 
   h2 {
@@ -86,10 +109,6 @@
     @media (width >= 900px) {
       flex-direction: row;
       gap: 24px;
-
-      &#form-connection-test {
-        width: 50%;
-      }
     }
   }
 
@@ -120,43 +139,6 @@
     }
   }
 
-  .mail-input-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    input {
-      padding-left: 50px;
-      width: 100%;
-    }
-
-    .mail-icon-container {
-      position: absolute;
-      pointer-events: none;
-      background-color: white;
-      padding: 6px;
-      height: calc(100% - 2px);
-      left: 2px;
-      border-right: 1px solid currentcolor;
-      border-radius: 4px 0 0 4px;
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .button-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    gap: 8px;
-    flex-direction: column;
-
-    @media (width >= 900px) {
-      flex-direction: row;
-      gap: 24px;
-    }
-  }
-
   button {
     padding: 10px 16px;
 
@@ -164,30 +146,114 @@
       width: 50%;
       align-self: end;
       height: fit-content;
+    }
+  }
 
-      &.connection-button {
-        width: 100%;
+  &.home-variant {
+    @media (width >= 900px) {
+      grid-column: span 8;
+      grid-row: span 2;
+    }
+
+    a {
+      display: none;
+      margin-top: 24px;
+      align-items: center;
+      gap: 16px;
+      color: var(--card-body-color-1);
+      font: var(--section-link-2);
+      width: fit-content;
+      border-bottom: 1px solid var(--transparent-100);
+      transition: 0.3s;
+  
+      &:hover {
+        border-bottom: 1px solid currentcolor;
+      }
+      
+      @media (width >= 900px) {
+        display: flex;
       }
     }
   }
 
-  .secondary-button {
-    color: var(--button-text-color-2);
-    font: var(--button-link-font-xs);
-    gap: 8px;
-    transition: 0.3s;
-    align-items: center;
-    margin-top: 0;
-    border: 2px solid currentcolor;
-    display: flex;
-    width: 100%;
+  &.domain-variant,
+  &.mail-variant {
+    ul {
+      display: none;
+      gap: 48px;
+      padding-top: 24px;;
+  
+      @media (width >= 900px) {
+        display: flex;
+      }
+    }
+  
+    li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--card-body-color-1);
+      font: var(--section-link-2);
+  
+      svg {
+        border-radius: 100%;
+        padding: 4px;
+        min-width: 24px;
+        min-height: 24px;
+        background: var(--green-100);
+      }
+    }
+  }
 
-    @media (width >= 900px) {
-      width: 50%;
+  &.connection-variant {
+    #form-connection-test {
+      @media (width >= 900px) {
+        width: 50%;
+      }
     }
 
-    &:hover {
-      border: 2px solid var(--button-bg-color-hover-2);
+    .connection-button {
+      @media (width >= 900px) {
+        width: 100%;
+      }
+    }
+
+    .secondary-button {
+      width: 100%;
+
+      @media (width >= 900px) {
+        width: 50%;
+      }
+
+      &:hover {
+        border: 2px solid var(--button-bg-color-hover-2);
+      }
+    }
+  }
+
+  &.mail-variant {
+    .mail-input-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      input {
+        padding-left: 50px;
+        width: 100%;
+      }
+
+      .mail-icon-container {
+        position: absolute;
+        pointer-events: none;
+        background-color: white;
+        padding: 6px;
+        height: calc(100% - 2px);
+        left: 2px;
+        border-right: 1px solid currentcolor;
+        border-radius: 4px 0 0 4px;
+        display: flex;
+        align-items: center;
+      }
     }
   }
 }
@@ -203,9 +269,19 @@
   justify-content: space-between;
 
   @media (width >= 900px) {
-    grid-column: span 4;
-    grid-row: span 1;
+    grid-column: 2 / 7;
     padding: 36px 24px;
+
+    &:nth-of-type(2) {
+      grid-column: 7 / 12;
+    }
+  }
+
+  &.home-variant {
+    @media (width >= 900px) {
+      grid-column: span 4;
+      grid-row: span 1;
+    }
   }
 
   .card-container {
@@ -253,12 +329,47 @@
   }
 }
 
+.ellipse-color-1 .ellipse {
+  background: var(--ellipse-color-1);
+}
+
+.ellipse-color-4 .ellipse {
+  background: var(--ellipse-color-4);
+}
+
 .ellipse-container {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: -1;
+
+  &.hidden-mobile {
+    display: none;
+
+    @media (width >= 900px) {
+      display: flex;
+    }
+  }
+
+  &.bottom-left {
+    bottom: 60%;
+
+    @media (width >= 900px) {
+      bottom: -25%;
+      left: -10%;
+    }
+  }
+
+  &.bottom-right {
+    bottom: 60%;
+    transform: scaleX(-1);
+
+    @media (width >= 900px) {
+      bottom: -25%;
+      right: -10%;
+    }
+  }
 
   .ellipse {
     border-width: 48px;
@@ -298,6 +409,35 @@
     }
   }
 }
+
+li:nth-child(3n + 1) .ellipse.singular {
+  bottom: 0;
+  left: -60%;
+
+  @media (width >= 900px) {
+    bottom: -20%;
+    left: 0;
+    transform: scaleX(-1);
+  }
+}
+
+li:nth-child(3n + 2) .ellipse.singular {
+  bottom: 0;
+  left: -60%;
+}
+
+li:nth-child(3n) .ellipse.singular {
+  bottom: 0;
+  left: -60%;
+
+  @media (width >= 900px) {
+    top: -20%;
+    right: 0;
+    transform: scaleY(-1);
+    left: unset;
+  }
+}
+
 
 .news-list {
   grid-column: span 12;
@@ -352,17 +492,5 @@
   p {
     font: var(--card-body-3);
     color: var(--card-body-color-3);
-  }
-
-  /* stylelint-disable-next-line no-descending-specificity */
-  .ellipse {
-    background: var(--ellipse-color-1);
-    bottom: -90%;
-    left: 0;
-
-    @media (width >= 900px) {
-      left: 0;
-      bottom: -70%;
-    }
   }
 }

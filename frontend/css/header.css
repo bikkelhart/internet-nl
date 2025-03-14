@@ -141,7 +141,7 @@ header:has(.active) {
   height: 100vh;
   top: 0;
   left: 0;
-  background: var(--mobile-nav-bg-color);
+  background: var(--nav-mobile-bg-color);
   display: none;  
   overflow: auto;
 
@@ -229,7 +229,7 @@ header nav {
 
   .nav-item {
     padding-bottom: 16px;
-    border-bottom: var(--mobile-nav-border);
+    border-bottom: var(--nav-mobile-border);
 
     @media (width >= 900px) {
       padding-bottom: 0;
@@ -282,7 +282,6 @@ header nav {
         left: 0;
         width: 150%;
         height: 20px;
-        background: var(--transparent-100);
       }
     }
 
@@ -303,7 +302,7 @@ header nav {
         gap: 16px;
         position: absolute;
         padding: 20px 24px;
-        background-color: var(--dropdown-bg-color);
+        background-color: var(--nav-dropdown-bg-color);
         border-radius: 8px;
         width: max-content;
         justify-content: space-between;
@@ -413,16 +412,16 @@ header nav {
     cursor: pointer;
     padding: 8px;
     border-radius: 8px;
-    background: var(--mobile-lang-bg-color);
-    color: var(--mobile-lang-text-color);
+    background: var(--nav-mobile-lang-bg-color);
+    color: var(--nav-mobile-lang-text-color);
     border: none;
-    border-right: 8px solid transparent;
+    border-right: 8px solid var(--transparent-100);
     align-items: center;
     font: var(--nav-button);
     text-transform: uppercase;
 
     @media (width >= 900px) {
-      background-color: var(--lang-bg-color);
+      background-color: var(--nav-lang-bg-color);
       color: var(--nav-text-color);
     }
   }
@@ -462,7 +461,7 @@ header nav {
   }
 
   .switch-container {
-    background-color: var(--theme-button-bg-color);
+    background-color: var(--nav-theme-button-bg-color);
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -476,7 +475,7 @@ header nav {
     width: 26px;
     border-radius: 100%;
     margin-left: 4px;
-    background-color: var(--theme-button-color);
+    background-color: var(--nav-theme-button-color);
     display: flex;
     align-items: center;
     justify-content: center;
