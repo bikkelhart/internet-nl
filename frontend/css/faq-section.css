@@ -6,6 +6,7 @@
     margin-bottom: 80px;
     background: linear-gradient(to right, var(--bg-color-2) 100%, transparent 100%);
     background-size: calc((100vw - 1240px) / 2 + 1240px - 200px) 100%;
+    background-repeat: no-repeat;
   }
 
   .container {
