@@ -23,7 +23,12 @@
   <link rel="stylesheet" href="{% static 'css/components.css' %}" />
   <link rel="stylesheet" href="{% static 'css/header.css' %}" />
   <link rel="stylesheet" href="{% static 'css/footer.css' %}" />  
-  <link rel="stylesheet" href="{% static 'css/test-section.css' %}" />  
+  <link rel="stylesheet" href="{% static 'css/test-section.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/explanation-section.css' %}" />  
+  <link rel="stylesheet" href="{% static 'css/hall-of-fame-section.css' %}" /> 
+  <link rel="stylesheet" href="{% static 'css/about-section.css' %}" />  
+  <link rel="stylesheet" href="{% static 'css/news-section.css' %}" />  
+  <link rel="stylesheet" href="{% static 'css/faq-section.css' %}" />  
 
   <script src="{% static "js/jquery-3.5.1.min.js" %}"></script>
   <script type="text/javascript" src="{% static "js/headroom-min.js" %}"></script>
@@ -33,6 +38,7 @@
   <script type="text/javascript" src="{% static 'js/initial-min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/header-min.js' %}" defer></script>
   <script type="text/javascript" src="{% static 'js/language-switch-min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'js/carrousel-min.js' %}" defer></script>
 
   {% block scripting %}
   {% endblock %}
@@ -46,6 +52,7 @@
   <!-- <div class="skiplink"><a href="#content">{% include "string.html" with name='page gotocontents' %}</a></div>
   <div class="skiplink" id="skiplink-sitenav"><a href="#sitenav">{% include "string.html" with name='page gotomainmenu' %}</a></div>
   <div class="skiplink"><a href="#footer">{% include "string.html" with name='page gotofooter' %}</a></div> -->
+  <a class="skip-link" href="#main-content">Ga naar hoofdinhoud</a>
 
   <header>
     <div class="container">
@@ -187,6 +194,10 @@
                 {% endfor %}
               {% endwith %}
             </select>
+              <svg class="select-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.859 9L12.43 15.43L6 9" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             <button type="submit">Taal wijzigen</button>
           </form>
           <button id="theme-toggle" class="theme-button" type="button">

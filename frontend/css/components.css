@@ -8,6 +8,11 @@
   justify-content: center;
   font: var(--button-link-font-xs);
   transition: 0.3s;
+  width: 100%;
+
+  @media (width >= 900px) {
+    width: auto;
+  }
 }
 
 .primary-button {
@@ -20,7 +25,7 @@
 }
 
 .secondary-button {
-  color: var(--button-text-color-1);
+  color: var(--button-text-color-2);
   border: 2px solid currentcolor;
 
   &:hover {
@@ -51,115 +56,20 @@
   background: var(--button-bg-color-5);
 }
 
-.test-card-large {
-  background: var(--card-bg-color-1);
-  padding: 32px 16px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-
-  @media (width >= 900px) {
-    padding: 48px;
-  }
-
-  h2 {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    color: var(--card-heading-color-1);
-    font: var(--card-header-1);
-    padding-bottom: 24px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-
-    @media (width >= 900px) {
-      flex-direction: row;
-      gap: 24px;
-    }
-  }
-
-  label {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    color: var(--card-body-color-1);
-    font: var(--card-header-5);
-    padding-bottom: 16px;
-    
-    @media (width >= 900px) {
-      width: 50%;
-      padding-bottom: 0;
-    }
-  }
-
-  input {
-    padding: 8px 16px;
-    border-radius: 4px;
-    background: var(--card-input-bg-color-1);
-    font: var(--card-input-1);
-    color: var(--card-body-color-1);
-    border: 1px solid currentcolor;
-
-    &::placeholder {
-      color: var(--card-body-color-1);
-    }
-  }
-
-  button {
-    padding: 10px 16px;
-
-    @media (width >= 900px) {
-      width: 50%;
-      align-self: end;
-      height: fit-content;
-    }
-  }
-}
-
-.test-card-small {
+.button-container {
   display: flex;
   align-items: center;
   grid-column: span 12;
-  padding: 24px 16px;
-  background: var(--card-bg-color-1);
-  border-radius: 8px;
-  gap: 16px;
-  justify-content: space-between;
+  gap: 8px;
+  flex-direction: column;
+
+  &.center {
+    justify-content: center;
+  }
 
   @media (width >= 900px) {
-    grid-column: span 4;
-    grid-row: span 1;
-    padding: 36px 24px;
-  }
-
-  .card-container {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-
-    @media (width >= 900px) {
-      gap: 8px;
-    }
-
-    h2, h3 {
-      color: var(--card-heading-color-1);
-      font: var(--card-header-4);
-    }
-
-    p {
-      color: var(--card-body-color-1);
-      font: var(--card-body-1);
-    }
+    flex-direction: row;
+    gap: 24px;
   }
 }
 
@@ -182,12 +92,47 @@
   }
 }
 
+.ellipse-color-1 .ellipse {
+  background: var(--ellipse-color-1);
+}
+
+.ellipse-color-4 .ellipse {
+  background: var(--ellipse-color-4);
+}
+
 .ellipse-container {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: -1;
+
+  &.hidden-mobile {
+    display: none;
+
+    @media (width >= 900px) {
+      display: flex;
+    }
+  }
+
+  &.bottom-left {
+    bottom: 60%;
+
+    @media (width >= 900px) {
+      bottom: -25%;
+      left: -10%;
+    }
+  }
+
+  &.bottom-right {
+    bottom: 60%;
+    transform: scaleX(-1);
+
+    @media (width >= 900px) {
+      bottom: -25%;
+      right: -10%;
+    }
+  }
 
   .ellipse {
     border-width: 48px;
@@ -225,5 +170,33 @@
         height: 636px;
       }
     }
+  }
+}
+
+li:nth-child(3n + 1) .ellipse.singular {
+  bottom: 0;
+  left: -60%;
+
+  @media (width >= 900px) {
+    bottom: -20%;
+    left: 0;
+    transform: scaleX(-1);
+  }
+}
+
+li:nth-child(3n + 2) .ellipse.singular {
+  bottom: 0;
+  left: -60%;
+}
+
+li:nth-child(3n) .ellipse.singular {
+  bottom: 0;
+  left: -60%;
+
+  @media (width >= 900px) {
+    top: -20%;
+    right: 0;
+    transform: scaleY(-1);
+    left: unset;
   }
 }
