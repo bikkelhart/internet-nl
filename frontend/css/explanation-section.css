@@ -131,26 +131,26 @@
   @media (scripting: none) {
     display: none;
   }
-}
 
-.dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--green-400);
-  border-radius: 50%;
-  transition: background-color 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &.active {
-    background-color: var(--orange-300);
-    width: 15px;
-    height: 15px;
-  }
-
-  & button {
-    height: 100%;
-    width: 100%;
+  .dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--green-400);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    &.active {
+      background-color: var(--orange-300);
+      width: 15px;
+      height: 15px;
+    }
+  
+    & button {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
