@@ -237,3 +237,12 @@ section:has(.ellipse-container) {
     background-color: var(--bg-color-3);
   }
 }
+
+svg {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.block.wide {
+  display: none;
+}
