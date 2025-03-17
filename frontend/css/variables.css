@@ -80,9 +80,9 @@
   --card-header-3: var(--heading-font-xs);
   --card-header-4: var(--heading-font-xxs);
   --card-header-5: var(--heading-font-xxs);
-  --card-body-1: var(--body-font-xxs);
+  --card-body-1: var(--body-font-xs);
   --card-body-2: var(--body-font-xxs);
-  --card-body-3: var(--body-font-xs);
+  --card-body-3: var(--body-font-xxs);
   --card-input-1: var(--body-font-s);
 
   /* ACCORDION FONTS MOBILE */
@@ -122,8 +122,8 @@
     --card-header-4: var(--heading-font-xs);
     --card-header-5: var(--heading-font-xxs);
     --card-body-1: var(--body-font-xs);
-    --card-body-2: var(--body-font-xxs);
-    --card-body-3: var(--body-font-xs);
+    --card-body-2: var(--body-font-xs);
+    --card-body-3: var(--body-font-xxs);
     --card-input-1: var(--body-font-s);
 
     /* ACCORDION FONTS DESKTOP */

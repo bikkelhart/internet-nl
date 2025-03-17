@@ -114,7 +114,7 @@ section > .container {
   z-index: 999;
   padding: 16px;
   background-color: var(--black-100);
-  color: #FFF;
+  color: var(--white-100);
   opacity: 0;
 }
 
@@ -246,6 +246,61 @@ section:has(.ellipse-container) {
 
 .dark-visible {
   display: var(--dark-visible);
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+
+  @media (width >= 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  &:has(.card.large) {
+    @media (width >= 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.card {
+  padding: 24px;
+  overflow: clip;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+  gap: 24px;
+  height: 100%;
+  justify-content: space-between;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  h2, h3 {
+    font: var(--card-header-2);
+  }
+
+  &:hover h2,
+  &:hover h3 {
+    text-decoration: underline;
+  }
+
+  &.large {
+    @media (width >= 900px) {
+      padding: 40px;
+    }
+
+    .content {
+      gap: 16px;
+    }
+  }
 }
 
 .block.wide {

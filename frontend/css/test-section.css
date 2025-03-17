@@ -36,7 +36,6 @@
     }
   
     h2 {
-      grid-column: span 12;
       text-align: center;
   
       @media (width >= 900px) {
@@ -53,7 +52,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  grid-column: span 12;
+  
 
   @media (width >= 900px) {
     padding: 48px;
@@ -234,7 +233,6 @@
 .test-card-small {
   display: flex;
   align-items: center;
-  grid-column: span 12;
   padding: 24px 16px;
   background: var(--card-bg-color-1);
   border-radius: 8px;
@@ -278,7 +276,7 @@
 
     p {
       color: var(--card-body-color-1);
-      font: var(--card-body-1);
+      font: var(--card-body-2);
     }
   }
 }

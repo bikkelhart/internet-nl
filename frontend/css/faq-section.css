@@ -15,7 +15,6 @@
     }
 
     h2 {
-      grid-column: span 12;
       padding-bottom: 24px;
 
       @media (width >= 900px) {
@@ -25,7 +24,6 @@
     }
 
     > a {
-      grid-column: span 12;
       margin-block: 16px 32px;
       justify-self: center;
 
@@ -39,7 +37,6 @@
 }
 
 .faq-item {
-  grid-column: span 12;
   margin-bottom: 8px;
   background: var(--accordion-bg-color);
   border-radius: 8px;
@@ -99,7 +96,6 @@
 }
 
 .contact-card {
-  grid-column: span 12;
   padding: 32px 16px;
   background: var(--card-bg-color-4);
   border-radius: 8px;
@@ -156,7 +152,7 @@
 
     /* stylelint-disable-next-line no-descending-specificity */
     p {
-      font: var(--card-body-1);
+      font: var(--card-body-2);
       color: var(--card-body-color-4);
     }
   }
