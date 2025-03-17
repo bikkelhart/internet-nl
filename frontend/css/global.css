@@ -133,10 +133,6 @@ svg {
   min-height: 24px;
 }
 
-.block.wide {
-  display: none;
-}
-
 section:has(.ellipse-container) {
   overflow: clip;
 
@@ -238,9 +234,12 @@ section:has(.ellipse-container) {
   }
 }
 
-svg {
-  min-width: 24px;
-  min-height: 24px;
+.light-visible {
+  display: var(--light-visible);
+}
+
+.dark-visible {
+  display: var(--dark-visible);
 }
 
 .block.wide {

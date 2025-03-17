@@ -49,66 +49,11 @@ header {
   }
 }
 
-header:has(.active) {
-  .close {
-    display: initial;
-  }
-
-  .open {
-    display: none;
-  }
-
-  .header-logo-toggle-controls {
-    padding: 20px 16px;
-    border-radius: 0 0 16px 16px;
-  }
-}
-
 .header-logo {
-  display: flex;
-  align-items: center;
   transition: opacity 0.3s;
 
   &:hover {
     opacity: 0.8;
-  }
-
-  @media (width >= 900px) {
-    width: 182px;
-    height: 40px;
-  }
-
-  svg {
-    .search-icon-background, 
-    .big-text {
-      fill: var(--logo-color-3);
-    }
-
-    .search-icon {
-      fill: var(--logo-color-1);
-    }
-
-    .search-icon-inner {
-      fill: var(--logo-color-2);
-    }
-
-    .small-grey-text {
-      fill: var(--logo-color-3);
-      display: none;
-
-      @media (width >= 900px) {
-        display: initial;
-      }
-    }
-
-    .small-orange-text {
-      fill: var(--logo-color-2);
-      display: none;
-
-      @media (width >= 900px) {
-        display: initial;
-      }
-    }
   }
 }
 
@@ -130,6 +75,21 @@ header:has(.active) {
 
   @media (scripting: none) {
     display: none;
+  }
+}
+
+header:has(.active) {
+  .close {
+    display: initial;
+  }
+
+  .open {
+    display: none;
+  }
+
+  .header-logo-toggle-controls {
+    padding: 20px 16px;
+    border-radius: 0 0 16px 16px;
   }
 }
 

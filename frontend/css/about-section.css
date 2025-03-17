@@ -99,14 +99,6 @@
       max-width: initial;
     }
 
-    &:first-of-type {
-      display: var(--image-visible);
-    }
-
-    &:last-of-type {
-      display: var(--image-hidden);
-    }
-
     &:hover {
       opacity: 0.6;
     }
