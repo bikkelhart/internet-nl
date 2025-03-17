@@ -57,7 +57,8 @@
   &::details-content {
     @media (prefers-reduced-motion: no-preference) {
       @supports (transition-behavior: allow-discrete) {
-        transition: height 0.3s allow-discrete, opacity 0.3s allow-discrete, content-visibility 0.3s allow-discrete;
+        transition: height 0.3s, opacity 0.3s, content-visibility 0.3s;
+        transition-behavior: allow-discrete;
         opacity: 0;
         height: 0;
       }

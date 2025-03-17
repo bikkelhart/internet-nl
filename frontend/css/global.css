@@ -64,6 +64,8 @@ body {
   font-family: Montserrat, sans-serif;
   background-color: var(--bg-color-1);
   interpolate-size: allow-keywords;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
 }
 
 main {
@@ -84,6 +86,7 @@ ul {
 
 a {
   text-decoration: none;
+  display: flex;
 }
 
 button {

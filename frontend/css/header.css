@@ -111,7 +111,8 @@ header:has(.active) {
 
   @media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
     @supports (transition-behavior: allow-discrete) {
-      transition: display 0.5s allow-discrete, opacity 0.5s allow-discrete, left 0.5s allow-discrete;
+      transition: display 0.5s, opacity 0.5s, left 0.5s;
+      transition-behavior: allow-discrete;
       left: 100%;
       opacity: 0;
     }
@@ -254,7 +255,8 @@ header nav {
         @supports (transition-behavior: allow-discrete) {
           opacity: 0;
           max-height: 0;
-          transition: max-height 0.3s allow-discrete, opacity 0.3s allow-discrete, display 0.3s allow-discrete, padding 0.3s allow-discrete;
+          transition: max-height 0.3s, opacity 0.3s, display 0.3s, padding 0.3s;
+          transition-behavior: allow-discrete;
         }
       }
 
@@ -278,7 +280,7 @@ header nav {
         @media (prefers-reduced-motion: no-preference) {
           @supports (transition-behavior: allow-discrete) {
             opacity: 1;
-            max-height: 200px;
+            max-height: 500px;
 
             @starting-style {
               opacity: 0;
@@ -302,7 +304,7 @@ header nav {
         @media (prefers-reduced-motion: no-preference) {
           @supports (transition-behavior: allow-discrete) {
             opacity: 1;
-            max-height: 200px;
+            max-height: 500px;
 
             @starting-style {
               opacity: 0;
