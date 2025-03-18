@@ -119,12 +119,12 @@ section > .container {
   background-color: var(--black-100);
   color: var(--white-100);
   opacity: 0;
-}
 
-.skip-link:focus {
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 1;
+  &:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
 }
 
 body:has(.nav-controls.active) .skip-link {
@@ -253,18 +253,11 @@ section:has(.ellipse-container) {
 
 .card-list {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 24px;
 
   @media (width >= 900px) {
-    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
-  }
-
-  &:has(.card.large) {
-    @media (width >= 900px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 }
 
