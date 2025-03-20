@@ -289,6 +289,8 @@ section:has(.ellipse-container) {
   }
 
   &.large {
+    transform: translateY(64px);
+
     @media (width >= 900px) {
       padding: 40px;
     }
