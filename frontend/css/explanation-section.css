@@ -1,13 +1,26 @@
-.explanation-page {
-  padding-top: 48px;
-}
-
 .explanation-section {
-  .page-variant {
+  &.page-variant {
     padding-top: 48px;
+
+    @media (width >= 900px) {
+      padding-top: 88px;
+    }
+
+    h1 {
+      padding-bottom: 16px;
+
+      @media (width >= 900px) {
+        padding-bottom: 24px;
+      }
+    }
+
+    > div > p {
+      font: var(--section-header-5);
+      color: var(--body-color-1);
+    }
   }
 
-  .home-variant {
+  &.home-variant {
     .container {
       row-gap: 32px;
       align-items: center;
