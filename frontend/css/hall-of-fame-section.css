@@ -21,3 +21,36 @@
     }
   }
 }
+
+.hall-of-fame-filter {
+  transform: translateY(-125px);
+  margin-inline: 16px;
+
+  @media (width >= 900px) {
+    margin-inline: 0;
+  }
+
+  form {
+    background: var(--bg-color-1);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (width >= 900px) {
+      grid-column: 3 / 11;
+      width: 100%;
+      gap: 48px;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    label {
+      font: var(--section-header-5);
+      color: var(--heading-color-3);
+    }
+  }
+}
