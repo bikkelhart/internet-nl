@@ -138,8 +138,7 @@ body:has(.nav-controls.active) {
 }
 
 svg {
-  min-width: 24px;
-  min-height: 24px;
+  min-width: fit-content;
 }
 
 .heading-accent-color {
@@ -222,11 +221,10 @@ svg {
 .colored-section {
   @media (width >= 900px) {
     border-radius: 16px;
-    margin: 16px 16px 0;
+    margin-inline: 16px;
   }
 
   &.not-full-width {
-    margin: 0 16px;
     border-radius: 16px;
   }
 
@@ -353,6 +351,20 @@ svg {
     margin-bottom: 64px;
   }
 }
+
+.intro-section {
+  .container {
+    padding-block: 156px;
+    text-align: center;
+    row-gap: 24px;
+  }
+
+  h1 {
+    font: var(--section-header-8);
+    color: var(--heading-color-4);
+  }
+}
+
 
 .block.wide {
   display: none;

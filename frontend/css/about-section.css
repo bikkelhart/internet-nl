@@ -100,19 +100,6 @@
   }
 }
 
-.intro-section {
-  .container {
-    padding-block: 156px;
-    text-align: center;
-    row-gap: 24px;
-  }
-
-  h1 {
-    font: var(--section-header-8);
-    color: var(--heading-color-4);
-  }
-}
-
 .quote-section {
   .container {
     padding-block: 88px;

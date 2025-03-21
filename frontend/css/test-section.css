@@ -42,6 +42,10 @@
         grid-column: 2 / 12;
       }
     }
+
+    &:has(:nth-child(4):last-child) .test-card-small {
+      grid-column: span 4;
+    }
   }
 }
 
@@ -110,6 +114,7 @@
       color: var(--card-body-color-1);
     }
   }
+  
 
   button {
     padding: 10px 16px;
@@ -178,12 +183,6 @@
   }
 
   &.connection-variant {
-    #form-connection-test {
-      @media (width >= 900px) {
-        width: 50%;
-      }
-    }
-
     .connection-button {
       @media (width >= 900px) {
         width: 100%;
@@ -193,13 +192,13 @@
     .secondary-button {
       width: 100%;
 
-      @media (width >= 900px) {
-        width: 50%;
-      }
-
       &:hover {
         border: 2px solid var(--button-bg-color-hover-2);
       }
+    }
+
+    .button-container {
+      width: auto;
     }
   }
 

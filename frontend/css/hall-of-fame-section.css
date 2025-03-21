@@ -64,9 +64,24 @@
   .container {
     gap: 64px 32px;
   }
-  .content {  
+
+  .content {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+
     @media (width >= 900px) {
       grid-column: 2 / 10;
+    }
+
+    h2 {
+      color: var(--heading-color-1);
+      font: var(--section-header-2);
+    }
+
+    p {
+      color: var(--body-color-1);
+      font: var(--section-body-1);
     }
   }
 
@@ -74,9 +89,17 @@
     background-color: var(--green-100);
     border-radius: 100%;
     padding: 24px 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
 
     @media (width >= 900px) {
-      grid-column: 10 / 13;
+      grid-column: 10 / 12;
     }
+  }
+
+  .secondary-button {
+    justify-self: center;
   }
 }
