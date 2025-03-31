@@ -16,17 +16,6 @@ class ListField(models.TextField):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-    def from_db_value(self, value, expression, connection, context="Null"):
-        if value is None:
-            return value
-        try:
-            return ast.literal_eval(value)
-        except SyntaxError:
-            raise SyntaxError(
-                f"Syntax error while attempting to parse value as python, in ListField,"
-                f" possibly raw value has been stored instead of valid python code: {value}"
-            )
-
     def to_python(self, value):
         if not value:
             value = []
@@ -42,8 +31,11 @@ class ListField(models.TextField):
         return str(value)
 
     def value_to_string(self, obj):
-        value = self._get_val_from_obj(obj)
-        return self.get_db_prep_value(value)
+        value = self.value_from_object(obj)
+        return self.get_prep_value(value)
+
+    def from_db_value(self, value, expression, connection):
+        return self.to_python(value)
 
 
 class AutoConfOption(Enum):
@@ -555,6 +547,13 @@ class DomainTestTls(BaseTestModel):
     cert_hostmatch_bad = ListField(null=True)
     cert_hostmatch_score = models.IntegerField(null=True)
 
+    # CAA
+    caa_enabled = models.BooleanField(null=True, default=False)
+    caa_errors = ListField(default=[])
+    caa_recommendations = ListField(default=[])
+    caa_score = models.IntegerField(null=True)
+    caa_found_on_domain = models.CharField(null=True, max_length=255)
+
     score = models.IntegerField(null=True)
 
     def __dir__(self):
@@ -615,6 +614,11 @@ class DomainTestTls(BaseTestModel):
             "cert_signature_score",
             "cert_hostmatch_bad",
             "cert_hostmatch_score",
+            "caa_enabled",
+            "caa_errors",
+            "caa_recommendations",
+            "caa_score",
+            "caa_found_on_domain",
             "score",
             "protocols_good",
         ]
@@ -647,6 +651,10 @@ class DomainTestTls(BaseTestModel):
             "cert_pubkey_phase_out": self.cert_pubkey_phase_out,
             "cert_signature_bad": self.cert_signature_bad,
             "cert_hostmatch_bad": self.cert_hostmatch_bad,
+            "caa_enabled": self.caa_enabled,
+            "caa_errors": self.caa_errors,
+            "caa_recommendations": self.caa_recommendations,
+            "caa_found_on_domain": self.caa_found_on_domain,
         }
 
     def get_mail_api_details(self):

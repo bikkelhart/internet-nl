@@ -101,7 +101,7 @@ button {
   padding-inline: 16px;
 }
 
-section > .container {
+[class*="section"]  > .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
@@ -347,7 +347,7 @@ svg {
   }
 }
 
-section {
+[class*="section"] {
   &:has(.ellipse-container) {
     overflow: clip;
 
