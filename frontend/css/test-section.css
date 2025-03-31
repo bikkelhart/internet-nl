@@ -1,3 +1,29 @@
+[data-theme="light"] .test-section {
+  background-image: url(/static/images/Background.svg);
+  background-position-y: bottom;
+}
+
+@media (prefers-color-scheme: light) {
+  .test-section {
+    background-image: url(/static/images/Background.svg);
+    background-position-y: bottom;
+  }
+}
+
+[data-theme="dark"] .test-section {
+  background-image: url(/static/images/Background2.svg);
+  background-position-y: bottom;
+}
+
+@media (prefers-color-scheme: dark) {
+  .test-section {
+    background-image: url(/static/images/Background2.svg);
+    background-position-y: bottom;
+  }
+}
+
+
+
 .test-section {
   .container {
     row-gap: 8px;
