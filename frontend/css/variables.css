@@ -22,6 +22,7 @@
   --orange-600: #CF7604;
   --blue-100: #1565C0;
   --red-100: #C00000;
+  --red-200: #FD2121;
   --grey-100: #757575;
   --grey-200: #828282;
   --white-100: #FFF;
@@ -225,7 +226,7 @@
   /* RESULT STATE COLORS */
   --success-color: var(--green-350);
   --warning-color: light-dark(var(--orange-375), var(--orange-350));
-  --failed-color: var(--red-100);
+  --failed-color: light-dark(var(--red-100), var(--red-200));
   --not-tested-color: light-dark(var(--grey-100), var(--grey-200));
   --info-color: var(--blue-100);
   

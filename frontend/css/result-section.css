@@ -302,9 +302,7 @@ body.connectiontest .action-card-item:has(.connection) {
 }
 
 body.font-large .action-card {
-  @media (width >= 900px) {
-    position: initial;
-  }
+  position: initial;
 }
 
 #copy-link {
@@ -604,6 +602,9 @@ meter::-moz-meter-bar {
         display: flex;
         gap: 8px;
         flex-direction: column;
+      }
+
+      .tech-details-table {
         overflow-x: auto;
       }
 

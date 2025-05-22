@@ -11,10 +11,12 @@ header {
   }
 
   &.not-scrolling-up {
-    translate: 0 -100%;
+    @media (prefers-reduced-motion: no-preference) {
+      translate: 0 -100%;
 
-    #nav-sublist.nav-sublist.expanded {
-      translate: -50% -100%;
+      #nav-sublist.nav-sublist.expanded {
+        translate: -50% -100%;
+      }
     }
   }
 
