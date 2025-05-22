@@ -1,11 +1,11 @@
 .result-section {
   .container {
-    padding-block: 32px;
-    row-gap: 24px;
+    padding-block: 2rem;
+    row-gap: 1.5rem;
 
-    @media (width >= 900px) {
-      padding-block: 36px;
-      row-gap: 48px;
+    @media (width >= 56.25rem) {
+      padding-block: 2.25rem;
+      row-gap: 3rem;
 
       & > * {
         grid-column: 1 / 8;
@@ -15,9 +15,9 @@
 
   &.loading {
     .container > * {
-      @media (width >= 900px) {
+      @media (width >= 56.25rem) {
         grid-column: 3 / 11;
-        row-gap: 40px;
+        row-gap: 2.5rem;
       }
     }
   }
@@ -25,26 +25,26 @@
   h1 {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem;
   }
 
   hgroup {
-    gap: 12px;
+    gap: 0.75rem;
 
-    @media (width >= 900px) {
-      gap: 24px;
+    @media (width >= 56.25rem) {
+      gap: 1.5rem;
     }
   }
 
   ul:not(.meter-numbers) {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
   }
 
   li:not(.meter-number) {
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
     align-items: center;
 
     a {
@@ -61,10 +61,10 @@
       background-color: unset;
       background-repeat: no-repeat;
       background-size: cover;
-      width: 18px;
-      height: 18px;
-      min-height: 18px;
-      min-width: 18px;
+      width: 1.125rem;
+      height: 1.125rem;
+      min-height: 1.125rem;
+      min-width: 1.125rem;
     }
 
     &.probing:has(:not(.done))::before {
@@ -75,20 +75,20 @@
 
     &.probing:has(.done)::before {
       background-image: url("/static/icons/checkmark-circle.svg");
-      width: 24px;
-      height: 24px;
-      min-height: 24px;
-      min-width: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
+      min-height: 1.5rem;
+      min-width: 1.5rem;
     }
 
     &:not(.probing)::before {
       background-color: unset;
       background-repeat: no-repeat;
       background-size: cover;
-      width: 24px;
-      height: 24px;
-      min-height: 24px;
-      min-width: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
+      min-height: 1.5rem;
+      min-width: 1.5rem;
       display: block;
     }
 
@@ -121,8 +121,8 @@ body.connectiontest .action-card-item:has(.connection) {
 
 .action-card {
   background-color: var(--card-bg-color-contact);
-  border-radius: 16px 16px 0 0;
-  padding: 16px 24px;
+  border-radius: 1rem 1rem 0 0;
+  padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column;
   grid-column: span 12;
@@ -130,21 +130,19 @@ body.connectiontest .action-card-item:has(.connection) {
   bottom: 0;
   order: 2;
   z-index: 1;
+  max-height: 80vh;
+  overflow-y: auto;
 
-  @media (width >= 900px) {
+  @media (width >= 56.25rem) {
     grid-column: 9 / 13;
     grid-row: 1 / 2;
     bottom: unset;
     order: unset;
-    top: 150px;
-    margin-top: -450px;
+    top: 20vh;
+    margin-top: -28.125rem;
     align-self: start;
-    padding: 32px;
-    border-radius: 16px;
-  }
-
-  @media (900px <= width <= 1100px) {
-    top: 250px;
+    padding: 2rem;
+    border-radius: 1rem;
   }
 
   details {
@@ -152,14 +150,14 @@ body.connectiontest .action-card-item:has(.connection) {
     flex-direction: column;
     appearance: none;
     overflow: clip;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
 
-    @media (width >= 900px) {
-      padding-bottom: 24px;
+    @media (width >= 56.25rem) {
+      padding-bottom: 1.5rem;
     }
 
     &::details-content {
-      @media (prefers-reduced-motion: no-preference) and (width < 900px) {
+      @media (prefers-reduced-motion: no-preference) and (width < 56.25rem) {
         @supports (transition-behavior: allow-discrete) {
           transition: height 0.3s, opacity 0.3s, content-visibility 0.3s;
           transition-behavior: allow-discrete;
@@ -168,7 +166,7 @@ body.connectiontest .action-card-item:has(.connection) {
         }
       }
 
-      @media (width >= 900px) {
+      @media (width >= 56.25rem) {
         content-visibility: visible;
       }
     }
@@ -201,9 +199,9 @@ body.connectiontest .action-card-item:has(.connection) {
   h2 {
     display: none;
 
-    @media (width >= 900px) {
+    @media (width >= 56.25rem) {
       display: flex;
-      padding-bottom: 8px;
+      padding-bottom: 0.5rem;
     }
   }
 
@@ -220,12 +218,12 @@ body.connectiontest .action-card-item:has(.connection) {
       display: block;
       transition: transform 0.3s;
 
-      @media (width >= 900px) {
+      @media (width >= 56.25rem) {
         display: none;
       }
     }
 
-    @media (width >= 900px) {
+    @media (width >= 56.25rem) {
       display: none;
     }
   }
@@ -233,14 +231,14 @@ body.connectiontest .action-card-item:has(.connection) {
   .action-card-description {
     font: var(--card-body-m);
     color: var(--card-body-color-contact);
-    padding-top: 24px;
+    padding-top: 1.5rem;
   }
 
   .action-card-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding-top: 16px;
+    gap: 1.5rem;
+    padding-top: 1rem;
   }
 
   .action-card-item a,
@@ -249,8 +247,8 @@ body.connectiontest .action-card-item:has(.connection) {
     font: var(--card-header-m);
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--card-body-color-contact);
-    padding-bottom: 8px;
+    border-bottom: 0.0625rem solid var(--card-body-color-contact);
+    padding-bottom: 0.5rem;
     display: flex;
 
     &::after {
@@ -261,7 +259,7 @@ body.connectiontest .action-card-item:has(.connection) {
 
     span {
       display: flex;
-      gap: 16px;
+      gap: 1rem;
       align-items: center;
     }
 
@@ -299,10 +297,6 @@ body.connectiontest .action-card-item:has(.connection) {
       display: none;
     }
   }
-}
-
-body.font-large .action-card {
-  position: initial;
 }
 
 #copy-link {
@@ -348,17 +342,17 @@ body.font-large .action-card {
 .meter-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   position: relative;
-  border-bottom: 2px solid var(--green-100);
-  padding-block: 24px 16px;
-  margin-inline: 10px;
+  border-bottom: 1px solid var(--green-100);
+  padding-block: 1.5rem 1rem;
+  margin-inline: 0.625rem;
 }
 
 .meter {
   background-color: var(--white-100);
-  border-radius: 20px;
-  height: 16px;
+  border-radius: 1.25rem;
+  height: 1rem;
 }
 
 .meter-value {
@@ -369,7 +363,7 @@ body.font-large .action-card {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 6px 6px 10px;
+  padding: 0.375rem 0.375rem 0.625rem;
   display: flex;
   font: var(--heading-font-xxs);
   opacity: 0;
@@ -388,7 +382,7 @@ body.font-large .action-card {
 
 meter {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   height: 100%;
   background: var(--white-100);
   vertical-align: top;
@@ -417,33 +411,33 @@ meter {
 
 meter::-webkit-meter-bar {
   background: var(--white-100);
-  border-radius: 20px;
-  height: 16px;
+  border-radius: 1.25rem;
+  height: 1rem;
 }
 
 meter::-webkit-meter-optimum-value,
 meter::-webkit-meter-suboptimum-value,
 meter::-webkit-meter-even-less-good-value {
   background: var(--green-400);
-  border-radius: 20px;
+  border-radius: 1.25rem;
 }
 
 meter::-moz-meter-bar {
   background: var(--green-400);
-  border-radius: 20px;
-  height: 16px;
+  border-radius: 1.25rem;
+  height: 1rem;
 }
 
 .result-details-section {
   .container {
-    row-gap: 32px;
+    row-gap: 2rem;
 
-    @media (width >= 900px) {
-      gap: 32px;
+    @media (width >= 56.25rem) {
+      gap: 2rem;
     }
 
     & > *:not(.action-card) {
-      @media (width >= 900px) {
+      @media (width >= 56.25rem) {
         grid-column: 1 / 9;
       }
     }
@@ -453,22 +447,22 @@ meter::-moz-meter-bar {
 .result-details-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
   z-index: 0;
 
-  @media (width >= 900px) {
-    gap: 34px;
+  @media (width >= 56.25rem) {
+    gap: 2.125rem;
   }
 }
 
 .result-details-item {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding-bottom: 24px;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
 
-  @media (width >= 900px) {
-    padding-bottom: 34px;
+  @media (width >= 56.25rem) {
+    padding-bottom: 2.125rem;
   }
 
   &:not(:last-child) {
@@ -478,18 +472,18 @@ meter::-moz-meter-bar {
   > hgroup {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem;
 
     h3 {
       display: flex;
-      gap: 16px;
+      gap: 1rem;
       align-items: center;
 
       &::before {
-        width: 32px;
-        height: 32px;
-        min-width: 32px;
-        min-height: 32px;
+        width: 2rem;
+        height: 2rem;
+        min-width: 2rem;
+        min-height: 2rem;
       }
 
       &.passed::before {
@@ -531,33 +525,33 @@ meter::-moz-meter-bar {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-color-primary);
-    border-radius: 8px;
-    padding: 24px;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
 
     h4 {
-      padding-bottom: 16px;
+      padding-bottom: 1rem;
 
       &:not(:first-child) {
-        padding-top: 16px;
+        padding-top: 1rem;
       }
     }
 
     details {
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
       background: var(--accordion-bg-color);
-      border-radius: 8px;
+      border-radius: 0.5rem;
 
-      @media (width >= 900px) {
+      @media (width >= 56.25rem) {
         grid-column: span 7;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
       }
 
       &:not(:last-child) {
-        margin-bottom: 8px;
+        margin-bottom: 0.5rem;
       }
 
       > *:last-child {
-        padding-bottom: 16px;
+        padding-bottom: 1rem;
       }
 
       a {
@@ -574,7 +568,7 @@ meter::-moz-meter-bar {
         list-style-position: inside;
 
         li {
-          margin-block: 8px;
+          margin-block: 0.5rem;
         }
       }
 
@@ -587,20 +581,20 @@ meter::-moz-meter-bar {
       }
 
       td, th {
-        padding: 6px;
+        padding: 0.375rem;
         font-size: 0.875rem;
       }
 
       code {
         background: var(--bg-color-primary);
-        padding: 4px;
-        border-radius: 4px;
+        padding: 0.25rem;
+        border-radius: 0.25rem;
       }
 
       div:has(.tech-details-table)
       {
         display: flex;
-        gap: 8px;
+        gap: 0.5rem;
         flex-direction: column;
       }
 
@@ -615,24 +609,24 @@ meter::-moz-meter-bar {
       &::details-content {
         font: var(--accordion-body);
         display: flex;
-        padding-inline: 16px;
+        padding-inline: 1rem;
         flex-direction: column;
-        gap: 16px;
+        gap: 1rem;
       }
 
       &[open] > *:not(summary) {
         @supports not (selector(::details-content)) {
           font: var(--accordion-body);
-          padding: 8px 16px;
+          padding: 0.5rem 1rem;
         }
       }
 
       summary {
-        padding: 16px;
+        padding: 1rem;
         font: var(--accordion-header);
         color: var(--accordion-heading-color);
         font-weight: 600;
-        gap: 16px;
+        gap: 1rem;
 
         &.warning {
           color: var(--warning-color);
