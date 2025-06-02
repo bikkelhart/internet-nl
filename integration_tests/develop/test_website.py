@@ -40,7 +40,7 @@ def test_your_website_score_with_ipv6(page, app_url, test_domain):
 
     print_details_test_results(page)
 
-    expect(score).to_have_attribute("data-resultscore", str(TEST_DOMAIN_EXPECTED_SCORE))
+    expect(score).to_have_attribute("value", str(TEST_DOMAIN_EXPECTED_SCORE))
 
 
 @pytest.mark.skip(
@@ -59,8 +59,8 @@ def test_your_website_score_no_ipv6(page, app_url, test_domain):
 
     page.wait_for_url(f"{app_url}/site/{test_domain}/*/", timeout=LONG_TIMEOUT)
 
-    score = page.locator("#testresults-percentage"")
+    score = page.locator("#testresults-percentage")
 
     print_details_test_results(page)
 
-    expect(score).to_have_attribute("data-resultscore", str(TEST_DOMAIN_EXPECTED_SCORE_NO_IPV6))
+    expect(score).to_have_attribute("value", str(TEST_DOMAIN_EXPECTED_SCORE_NO_IPV6))

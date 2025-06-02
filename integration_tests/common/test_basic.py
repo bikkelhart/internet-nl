@@ -90,14 +90,14 @@ def test_static_files(page, app_url_subdomain):
 
 
 def test_generated_css_static_files(page, app_url_subdomain):
-    response = page.request.get(app_url_subdomain + "/static/css/style.css")
+    response = page.request.get(app_url_subdomain + "/static/css/style-min.css")
     expect(response).to_be_ok()
     assert "@font-face" in response.text()
     assert "expires" in response.headers
 
 
 def test_generated_js_static_files(page, app_url_subdomain):
-    response = page.request.get(app_url_subdomain + "/static/js/menu-min.js")
+    response = page.request.get(app_url_subdomain + "/static/js/base-min.js")
     expect(response).to_be_ok()
     assert "hideMenuButton" in response.text()
     assert "expires" in response.headers

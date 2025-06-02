@@ -36,19 +36,19 @@ def test_favicon_ico(page, app_url):
 
 
 def test_static_files(page, app_url):
-    response = requests.get(app_url + "/static/logo_en.png", verify=False)
+    response = requests.get(app_url + "/static/logos/logo.svg", verify=False)
     response.raise_for_status()
 
 
 def test_generated_css_static_files(page, app_url):
-    response = requests.get(app_url + "/static/css/style.css", verify=False)
+    response = requests.get(app_url + "/static/css/style-min.css", verify=False)
     response.raise_for_status()
     assert "@font-face" in response.text
     assert "expires" in response.headers
 
 
 def test_generated_js_static_files(page, app_url):
-    response = requests.get(app_url + "/static/js/menu-min.js", verify=False)
+    response = requests.get(app_url + "/static/js/base-min.js", verify=False)
     response.raise_for_status()
-    assert "hideMenuButton" in response.text
+    assert "toggleTheme" in response.text
     assert "expires" in response.headers
