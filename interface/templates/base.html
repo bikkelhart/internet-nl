@@ -112,6 +112,8 @@
                 {% endfor %}
               {% endwith %}
             </select>
+            <input type="hidden" name="previous-page" value="{{request.path}}"/>
+            <input type="hidden" name="language" value="{{language.0}}"/>
             <button type="submit">{% include "string.html" with name="base_language_change_button_newstring" %}</button>
           </form>
           <button id="theme-toggle" class="theme-button" type="button">
