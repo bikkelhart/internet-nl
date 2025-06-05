@@ -107,6 +107,11 @@
       background-color: var(--failed-color);
     }
 
+    &.not-tested::before {
+      mask-image: url("/static/icons/question.svg");
+      background-color: var(--not-tested-color);
+    }
+
     &.error::before {
       mask-image: url("/static/icons/broken.svg");
       background-color: var(--error-color);
@@ -513,6 +518,11 @@ meter::-moz-meter-bar {
         mask-image: url("/static/icons/info.svg");
         display: block;
         background-color: var(--info-color);
+      }
+
+      &.not-tested::before {
+        mask-image: url("/static/icons/question.svg");
+        background-color: var(--not-tested-color);
       }
 
       &.error::before {
