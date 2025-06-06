@@ -2,7 +2,6 @@
 import "./js/lib/utils.js";
 import "./js/lib/matomo.js";
 
-import "./js/base/initial.js";
 import "./js/base/header.js";
 import "./js/base/theme.js";
 import "./js/base/print.js";
