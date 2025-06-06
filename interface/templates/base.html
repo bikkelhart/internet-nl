@@ -11,10 +11,10 @@
   <meta name="description" content="{{_("page metadescription")}}">
   <meta name="keywords" content="{{_("page metakeywords")}}">
   <meta name="author" content="Platform Internetstandaarden / Internet Standards Platform">
-  <link rel="icon" href="{% static "favicon.png" %}" sizes="32x32" />
-  <link rel="icon" href="{% static "favicon.png" %}" sizes="192x192" />
-  <link rel="apple-touch-icon-precomposed" href="{% static 'favicon.png' %}" />
-  <meta name="msapplication-TileImage" content="{% static 'favicon.png' %}" />
+  <link rel="icon" href="{% static 'favicon-new.svg' %}" type="image/svg+xml" />
+  <link rel="icon" href="{% static 'favicon-new.png' %}" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="{% static 'favicon-new.png' %}" />
+  <meta name="msapplication-TileImage" content="{% static 'favicon-new.png' %}" />
 
   <link rel="stylesheet" href="{% static 'css/style-min.css' %}" />
 
@@ -40,11 +40,11 @@
         <a class="header-logo" href="/" aria-label="{% include "string.html" with name="base_header_homepage_label_newstring" %}">
           <picture class="light-visible">
             <source srcset="/static/logos/logo.svg" media="(width >= 900px)">
-            <img src="/static/logos/logo-mobile.svg" alt="Internet.nl Logo" width="182" height="40">          
+            <img src="/static/logos/logo-mobile.svg" alt="Internet.nl Logo" width="227.5" height="50">          
           </picture>
           <picture class="dark-visible">
             <source srcset="/static/logos/logo-white.svg" media="(width >= 900px)">
-            <img src="/static/logos/logo-white-mobile.svg" alt="Internet.nl Logo" width="182" height="40">          
+            <img src="/static/logos/logo-white-mobile.svg" alt="Internet.nl Logo" width="227.5" height="50">          
           </picture>
         </a>
         {% endif %}
@@ -89,7 +89,8 @@
         </nav>
         <div class="language-theme-controls">
           <form class="language-form icon" action="/change_language/" method="post">
-            <select id="language-select" name="language" aria-label="{% include "string.html" with name="base_language_select_label_newstring" %}">
+            <label for="language-select" class="visually-hidden">{% include "string.html" with name="base_language_select_label_newstring" %}</label>
+            <select id="language-select" name="language">
               {% with user_language=request.current_language_code %}
                 {% for language in LANGUAGES %}
                   {% get_language_info for language.0 as lang %}
@@ -99,6 +100,7 @@
                 {% endfor %}
               {% endwith %}
             </select>
+            <input type="hidden" name="previous-page" value="{{request.path}}"/>
             <button type="submit">{% include "string.html" with name="base_language_change_button_newstring" %}</button>
           </form>
           <button id="theme-toggle" class="theme-button" type="button">
@@ -126,38 +128,26 @@
     <div class="footer-nav">
       <div class="container">
         <a class="footer-logo" href="/" aria-label="{% include "string.html" with name="base_header_homepage_label_newstring" %}">
-          <img src="/static/logos/logo-white.svg" alt="Internet.nl Logo" width="182" height="40" loading="lazy">
+          <img src="/static/logos/logo-white.svg" alt="Internet.nl Logo" width="227.5" height="50" loading="lazy">
         </a>
         <ul class="nav-list">
           <li class="nav-item">
-            <a class="icon" href="/test-tools">
-              <span>{% include "string.html" with name="base_footer_test_tools_newstring" %}</span>
-            </a>
+            <a class="icon" href="/test-tools">{% include "string.html" with name="base_footer_test_tools_newstring" %}</a>
           </li>
           <li class="nav-item">
-            <a class="icon" href="/faqs">
-              <span>{% include "string.html" with name="base_footer_knowledge_base_newstring" %}</span>
-            </a>
+            <a class="icon" href="/faqs">{% include "string.html" with name="base_footer_knowledge_base_newstring" %}</a>
           </li>
           <li class="nav-item">
-            <a class="icon" href="/halloffame">
-              <span>{% include "string.html" with name="base_footer_hall_of_fame_newstring" %}</span>
-            </a>
+            <a class="icon" href="/halloffame">{% include "string.html" with name="base_footer_hall_of_fame_newstring" %}</a>
           </li>
           <li class="nav-item">
-            <a class="icon" href="/articles">
-              <span>{% include "string.html" with name="base_footer_news_newstring" %}</span>
-            </a>
+            <a class="icon" href="/articles">{% include "string.html" with name="base_footer_news_newstring" %}</a>
           </li>
           <li class="nav-item">
-            <a class="icon" href="/about">
-              <span>{% include "string.html" with name="base_footer_about_us_newstring" %}</span>
-            </a>
+            <a class="icon" href="/about">{% include "string.html" with name="base_footer_about_us_newstring" %}</a>
           </li>
           <li class="nav-item">
-            <a class="icon" href="/contact">
-              <span>{% include "string.html" with name="base_footer_service_contact_newstring" %}</span>
-            </a>
+            <a class="icon" href="/contact">{% include "string.html" with name="base_footer_service_contact_newstring" %}</a>
           </li>
         </ul>
       </div>
