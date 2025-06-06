@@ -1,5 +1,3 @@
-import { hideJSLess } from "../lib/utils.js";
-
 /**
  * Initialize theme
  */
@@ -8,7 +6,6 @@ function initialize() {
   if (savedTheme) {
     document.documentElement.dataset.theme = savedTheme;
   }
-  hideJSLess();
 }
 
 export default initialize;

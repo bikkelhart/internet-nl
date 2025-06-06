@@ -3,7 +3,6 @@ import {
   validateNumber,
   toggleElements,
   fetchJson,
-  hideJSLess,
 } from "../../lib/utils.js";
 
 // State management
@@ -221,7 +220,6 @@ const elements = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  hideJSLess();
   if (validateElements(elements, "probe")) {
     initializeProbe();
   }

@@ -1,7 +1,6 @@
 import {
   validateElements,
   toggleElements,
-  hideJSLess,
   fetchJson,
 } from "../../lib/utils.js";
 
@@ -149,6 +148,5 @@ async function initializeConnectionTest() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  hideJSLess();
   initializeConnectionTest();
 });

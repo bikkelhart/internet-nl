@@ -38,7 +38,7 @@ function validateNumber(value, name) {
 /**
  * Toggle visibility of elements
  * @param {string} selector - CSS selector for elements
- * @param {boolean} hide - Whether to hide or show elements
+ * @param {boolean} [hide] - Optional: Whether to hide or show elements. If not provided, toggles current state
  * @param {string} context - Context for error message
  */
 function toggleElements(selector, hide, context = "") {
@@ -47,8 +47,9 @@ function toggleElements(selector, hide, context = "") {
   if (!validateElements(elements, context)) return;
 
   elements.forEach((element) => {
-    element.classList.toggle("hidethis", hide);
-    element.setAttribute("aria-hidden", hide.toString());
+    const hidden = typeof hide === "boolean" ? hide : !element.hidden;
+    element.hidden = hidden;
+    element.setAttribute("aria-hidden", hidden.toString());
   });
 }
 
@@ -88,18 +89,10 @@ async function fetchWithTimeout(url, timeout, options = {}) {
   }
 }
 
-/**
- * Hide elements for users without JavaScript
- */
-function hideJSLess() {
-  toggleElements(".jsless", true);
-}
-
 export {
   validateElements,
   validateNumber,
   toggleElements,
   fetchJson,
   fetchWithTimeout,
-  hideJSLess,
 };
