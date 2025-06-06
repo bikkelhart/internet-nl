@@ -75,7 +75,6 @@ const config = [
       format: "iife",
       sourcemap: !isProduction,
       file: `${outputDir}/js/legacy-min.js`,
-      name: "internetnl",
     },
     plugins: defaultPlugins,
   },
