@@ -77,7 +77,6 @@ footer {
     flex-direction: column;
     padding-block: 2rem;
     width: 100%;
-    flex-wrap: wrap;
 
     @media (width >= 56.25rem) {
       flex-direction: row;
