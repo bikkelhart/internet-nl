@@ -80,7 +80,7 @@ def test_robots_txt(page, app_url_subdomain):
 
 
 def test_favicon_ico(page, app_url_subdomain):
-    response = page.request.get(app_url_subdomain + "/favicon.ico")
+    response = page.request.get(app_url_subdomain + "/favicon.svg")
     expect(response).to_be_ok()
 
 

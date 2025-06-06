@@ -36,7 +36,7 @@ def test_robots_txt(page, app_url):
 
 
 def test_favicon_ico(page, app_url):
-    response = page.request.get(app_url + "/favicon.ico")
+    response = page.request.get(app_url + "/favicon.svg")
     expect(response).to_be_ok()
 
 
