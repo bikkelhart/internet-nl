@@ -14,18 +14,6 @@ const state = {
 };
 
 /**
- * Enable results and redirect to the results page
- */
-function enableResults() {
-  const elements = {
-    continue: document.querySelector("#continue"),
-  };
-
-  if (!validateElements(elements)) return;
-  window.location = "results";
-}
-
-/**
  * Show results for a specific category
  * @param {string} category - The category to show results for
  * @param {Object} results - The results object
@@ -41,7 +29,7 @@ function showResults(category, results) {
 
   state.probesRunning--;
   if (state.probesRunning <= 0) {
-    enableResults();
+    window.location = "results";
   }
 
   if (!results) return;
@@ -62,27 +50,14 @@ function showError(category) {
     errorSummary: document.querySelector("#probe-error-summary")?.innerHTML,
     summary: document.querySelector(`#${category}-summary`),
     icon: document.querySelector(`#${category}-icon`),
-    noRedirection: document.querySelector("#probes-no-redirection")?.innerHTML,
-    continue: document.querySelector("#continue"),
   };
 
-  // Check for missing required elements (excluding optional noRedirection)
-  const requiredElements = { ...elements };
-  delete requiredElements.noRedirection;
-  if (!validateElements(requiredElements, category)) return;
+  if (!validateElements(elements, category)) return;
 
   // Update probe status
   elements.summary.setAttribute("aria-busy", "false");
   elements.summary.innerHTML = elements.errorSummary;
   elements.icon.setAttribute("src", "/static/probe-error.png");
-
-  // Handle redirection if elements exist
-  if (elements.noRedirection && elements.continue) {
-    elements.continue.removeAttribute("id");
-    elements.continue.setAttribute("href", "/");
-    elements.continue.textContent = elements.noRedirection;
-    toggleElements(".jsless", false);
-  }
 }
 
 /**

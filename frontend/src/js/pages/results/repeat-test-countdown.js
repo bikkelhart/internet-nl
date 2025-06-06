@@ -12,15 +12,22 @@ const elements = {
  * Start the countdown timer for retesting
  */
 function startCountDownRetestTime() {
-  if (!validateElements(elements)) return;
+  if (!validateElements(elements)) {
+    console.error("Could not find countdown time element");
+    return;
+  }
 
   const seconds = validateNumber(
     elements.retestTime.textContent,
     "retest time"
   );
 
-  if (seconds === null) return;
+  if (seconds === null) {
+    console.error("Invalid retest time value");
+    return;
+  }
 
+  console.log("Starting countdown with", seconds, "seconds");
   countDownRetestTime(seconds);
 }
 
@@ -30,19 +37,26 @@ function startCountDownRetestTime() {
  */
 function countDownRetestTime(seconds) {
   const elements = {
-    text: document.querySelector(".repeat-test.link"),
-    link: document.querySelector(".repeat-test.countdown"),
+    link: document.querySelector(".repeat-test.link"),
+    countdown: document.querySelector(".repeat-test.countdown"),
     time: document.querySelector(".countdown-time"),
   };
 
-  if (!validateElements(elements)) return;
+  if (!validateElements(elements)) {
+    console.error("Could not find required elements for countdown");
+    return;
+  }
+
+  console.log("Countdown:", seconds, "seconds remaining");
 
   if (seconds < 1) {
-    toggleElements(".repeat-test.link", false);
-    toggleElements(".repeat-test.countdown", true);
+    console.log("Countdown finished, showing link");
+    elements.link.classList.remove("hidden");
+    elements.countdown.classList.add("hidden");
   } else {
-    toggleElements(".repeat-test.link", true);
-    toggleElements(".repeat-test.countdown", false);
+    console.log("Countdown running, showing countdown");
+    elements.link.classList.add("hidden");
+    elements.countdown.classList.remove("hidden");
     elements.time.textContent = seconds;
     setTimeout(() => countDownRetestTime(seconds - 1), 1000);
   }
