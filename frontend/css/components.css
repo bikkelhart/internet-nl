@@ -72,6 +72,11 @@
     gap: 1.5rem;
     width: fit-content;
   }
+
+  .primary-button, 
+  .secondary-button {
+    height: 100%;
+  }
 }
 
 /* MARK: GENERAL SECTIONS
