@@ -120,6 +120,7 @@
 
     &::placeholder {
       color: var(--placeholder-color);
+      opacity: 1;
     }
   }
 
