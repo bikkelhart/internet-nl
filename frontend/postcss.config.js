@@ -4,7 +4,6 @@ export default {
     "@csstools/postcss-cascade-layers": {
       onImportLayerRule: "warn",
     },
-    "postcss-variable-compress": {},
     autoprefixer: {},
     "postcss-preset-env": {
       features: {},
@@ -12,5 +11,6 @@ export default {
     cssnano: {
       preset: "default",
     },
+    "postcss-variable-compress": {},
   },
 };
