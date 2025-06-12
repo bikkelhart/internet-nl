@@ -120,7 +120,7 @@
     min-height: 3.25rem;
 
     &::placeholder {
-      color: var(--card-body-color-test);
+      color: var(--placeholder-color);
     }
   }
 

@@ -119,6 +119,11 @@
       background-color: var(--error-color);
     }
 
+    &.info::before {
+      mask-image: url("/static/icons/info.svg");
+      background-color: var(--info-color);
+    }
+
     &.hidethis {
       display: none;
     }
