@@ -38,12 +38,11 @@ function matomoGeneratedCode(disableCookies) {
 // Check if Matomo is configured
 const siteId = document.getElementById("matomo-siteid")?.textContent;
 if (siteId) {
-  // Do Not Track detection based on https://dev.to/corbindavenport/how-to-correctly-check-for-do-not-track-with-javascript-135d
   const doNotTrack =
     window.doNotTrack ||
     navigator.doNotTrack ||
     navigator.msDoNotTrack ||
-    "msTrackingProtectionEnabled" in window.external;
+    window.external?.msTrackingProtectionEnabled;
 
   if (doNotTrack) {
     // The browser supports Do Not Track
@@ -52,8 +51,7 @@ if (siteId) {
       navigator.doNotTrack == "yes" ||
       navigator.doNotTrack == "1" ||
       navigator.msDoNotTrack == "1" ||
-      ("msTrackingProtectionEnabled" in window.external &&
-        window.external.msTrackingProtectionEnabled());
+      window.external?.msTrackingProtectionEnabled();
 
     matomoGeneratedCode(dntEnabled);
   } else {
