@@ -134,6 +134,16 @@
     }
   }
 
+  .invalid-domain {
+    color: var(--warning-color);
+    font: var(--card-body-m);
+    padding-top: 0.5rem;
+
+    @media (width >= 56.25rem) {
+      width: 50%;
+    }
+  }
+
   &.home-variant {
     @media (width >= 56.25rem) {
       grid-column: span 8;
