@@ -15,13 +15,13 @@
               <input class="mail-input" name="url" type="text" placeholder="bikkelhart.com" inputmode="url" required>
             </div>
           </label>
+          {% if request.GET.invalid != None %}
+          <p class="invalid-domain">
+            {% include "string.html" with name="base test prechecks invalid domain" %}
+          </p>
+          {% endif %}
           <button class="primary-button icon" type="submit">{% include "string.html" with name="test_start_button_newstring" %}</button>
         </form>
-        {% if request.GET.invalid != None %}
-        <p class="invalid-domain">
-          {% include "string.html" with name="base test prechecks invalid domain" %}
-        </p>
-        {% endif %}
         <ul>
           <li>
             <div class="icon"></div>
