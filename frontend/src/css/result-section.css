@@ -49,10 +49,7 @@
 
     a {
       display: inline;
-
-      &:hover {
-        text-decoration: underline;
-      }
+      text-decoration: underline;
     }
 
     &.probing::before {
