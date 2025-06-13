@@ -210,6 +210,9 @@
   --card-body-color-contact: light-dark(var(--white-100), var(--white-100));
   --card-border: 2px solid light-dark(var(--transparent-100), var(--white-100));
   --card-box-shadow: 0 4px 32px 0 light-dark(var(--transparent-600), var(--transparent-600));
+  --card-bg-color-action: light-dark(var(--green-400), var(--green-500));
+  --card-heading-color-action: var(--white-100);
+  --card-body-color-action: var(--white-100);
 
   /* ELLIPSES LIGHTMODE */
   --ellipse-color-light: linear-gradient(0deg,light-dark(var(--white-100), var(--green-500)),light-dark(var(--transparent-200), var(--green-600)));
@@ -235,6 +238,7 @@
 
   /* OTHER COLORS */
   --placeholder-color: light-dark(var(--grey-400), var(--grey-300));
+  --meter-bg-color: var(--green-400);
 }
 
 /* MARK: OTHER VARIABLES
