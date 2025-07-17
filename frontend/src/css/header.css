@@ -62,6 +62,7 @@ header {
 
 .header-logo {
   transition: opacity 0.3s;
+  width: 227.5px;
 
   &:hover {
     opacity: 0.8;
