@@ -152,6 +152,7 @@
 
   /* HEADER COLORS LIGHTMODE */
   --nav-bg-color: light-dark(var(--white-100), var(--black-200));
+  --nav-sublist-border-color: light-dark(var(--green-600), var(--white-100));
   --nav-text-color: light-dark(var(--green-500), var(--white-100));
   --nav-mobile-bg-color: light-dark(var(--green-200), var(--green-600));
   --nav-mobile-border: 0.5px solid light-dark(var(--green-400), var(--black-200));
