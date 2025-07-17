@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% load translate %}
-<html lang="{{request.current_language_code}}" >
+<html lang="{{request.current_language_code}}" data-theme="{{request.COOKIES.theme}}">
 
 <head>
   <meta charset="utf-8">
@@ -15,14 +15,14 @@
   <link rel="icon" href="{% static 'favicon.png' %}" sizes="192x192" />
   <link rel="apple-touch-icon-precomposed" href="{% static 'favicon.png' %}" />
   <meta name="msapplication-TileImage" content="{% static 'favicon.png' %}" />
-
+    
   <link rel="stylesheet" href="{% static 'css/style-min.css' %}" />
-
+  
   {% block scripting %}
-    <script type="module" src="{% static 'js/base-min.js' %}"></script>
-    <script nomodule src="{% static 'js/legacy-min.js' %}"></script>
+  <script type="module" src="{% static 'js/base-min.js' %}"></script>
+  <script nomodule src="{% static 'js/legacy-min.js' %}"></script>
   {% endblock %}
-
+  
 </head>
 <body class="{{pageclass}}">
 
