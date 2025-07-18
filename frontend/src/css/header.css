@@ -67,12 +67,6 @@ header {
   &:hover {
     opacity: 0.8;
   }
-
-  img {
-    @media (width <= 73.125rem) {
-      width: 182px;
-    }
-  }
 }
 
 .toggle-menu {
