@@ -130,18 +130,18 @@
     --card-header-l: var(--heading-font-s);
     --card-header-m: var(--heading-font-xs);
     --card-header-s: var(--heading-font-xs);
-    --card-header-xs: var(--heading-font-xxs);
+    --card-header-xs: var(--heading-font-xs);
     --card-body-l: var(--body-font-xs);
     --card-body-m: var(--body-font-xs);
-    --card-body-s: var(--body-font-xxs);
+    --card-body-s: var(--body-font-xs);
     --card-body-xs: var(--body-font-s);
     --card-input: var(--body-font-s);
 
     /* ACCORDION FONTS DESKTOP */
     --accordion-header: var(--heading-font-xs);
-    --accordion-header-semibold: var(--heading-font-xxs-semibold);
-    --accordion-body: var(--body-font-xxs);
-    --accordion-body-semibold: var(--body-font-xxs-semibold);
+    --accordion-header-semibold: var(--heading-font-xs-semibold);
+    --accordion-body: var(--body-font-xs);
+    --accordion-body-semibold: var(--body-font-xs-semibold);
   }
 
   /* MARK: COLOR VARIABLES
