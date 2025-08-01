@@ -262,7 +262,7 @@
 
   &.news-card {
     background-color: var(--card-bg-color-news);
-  
+
     a {
       color: var(--card-body-color-news);
     }
@@ -270,17 +270,23 @@
 
   &.knowledge-card {
     background-color: var(--card-bg-color-knowledge);
-  
+
     a {
       color: var(--card-heading-color-knowledge);
-
     }
   }
 
 
   &.large {
+    &.knowledge-card {
+      border: var(--card-border-knowledge);
+    }
+
+    &.news-card {
+      border: var(--card-border);
+    }
+
     translate: 0 3rem;
-    border: var(--card-border);
 
     @media (width >= 56.25rem) {
       translate: 0 4rem;
@@ -433,6 +439,14 @@
 
 /* MARK: ACCORDION
 */
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  .accordion {
+    border: 1px solid var(--green-400);
+  }
+}
 
 .accordion {
   appearance: none;
