@@ -373,11 +373,12 @@ body.connectiontest .action-card-item:has(.connection) {
 .meter-value {
   position: absolute;
   translate: -50% -120%;
-  color: var(--white-100);
-  background-image: url("/static/icons/box.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  color: light-dark(var(--white-100), var(--black-100));
+  background-color: var(--meter-bg-color);
+  mask-image: url("/static/icons/box.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
   padding: 0.375rem 0.375rem 0.625rem;
   display: flex;
   font: var(--heading-font-xxs);

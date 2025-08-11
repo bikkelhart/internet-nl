@@ -240,7 +240,7 @@
 
   /* OTHER COLORS */
   --placeholder-color: light-dark(var(--grey-400), var(--grey-300));
-  --meter-bg-color: var(--green-400);
+  --meter-bg-color: light-dark(var(--green-400), var(--orange-350));
 }
 
 /* MARK: OTHER VARIABLES
