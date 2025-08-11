@@ -230,11 +230,12 @@
   --accordion-body-color: light-dark(var(--green-500), var(--white-100));
 
   /* RESULT STATE COLORS */
+  --probing-color: light-dark(var(--green-400), var(--white-100));
   --success-color: var(--green-350);
   --warning-color: light-dark(var(--orange-375), var(--orange-350));
   --failed-color: light-dark(var(--red-100), var(--red-200));
   --not-tested-color: light-dark(var(--grey-100), var(--grey-200));
-  --info-color: var(--blue-100);
+  --info-color: light-dark(var(--blue-100), var(--green-300));
   --error-color: light-dark(var(--grey-100), var(--grey-200));
 
   /* OTHER COLORS */
