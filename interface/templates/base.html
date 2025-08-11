@@ -67,7 +67,7 @@
             <ul class="nav-list">
               <li class="nav-item {% if pagemenu == 'test-tools' %}current{% endif %}">
                 <button id="toggle-subnav"
-                        class="icon"
+                        class="link-button icon"
                         type="button"
                         aria-controls="nav-sublist"
                         aria-expanded="false">
@@ -106,7 +106,7 @@
             <ul class="nav-list nav-settings">
               <li class="nav-item">
                 <button id="toggle-subnav-language"
-                        class="settings icon globe"
+                        class="settings-button icon globe"
                         type="button"
                         aria-controls="nav-sublist-language"
                         aria-expanded="false">
@@ -132,7 +132,7 @@
               </li>
               <li class="nav-item">
                 <button id="toggle-subnav-theme"
-                        class="settings icon {% if request.COOKIES.theme == 'light' %}sun{% elif request.COOKIES.theme == 'dark' %}moon{% else %}circle{% endif %}"
+                        class="settings-button icon {% if request.COOKIES.theme == 'light' %}sun{% elif request.COOKIES.theme == 'dark' %}moon{% else %}circle{% endif %}"
                         type="button"
                         aria-controls="nav-sublist-theme"
                         aria-expanded="false">
@@ -149,17 +149,17 @@
                 </button>
                 <ul id="nav-sublist-theme" class="nav-sublist">
                   <li class="nav-subitem">
-                    <button class="icon sun" id="theme-light" type="button">
-                      <span class="content">{% include "string.html" with name="base_theme_light_newstring" %}</span>
+                    <button class="theme icon sun" id="theme-light" type="button">
+                      {% include "string.html" with name="base_theme_light_newstring" %}
                     </button>
                   </li>
                   <li class="nav-subitem">
-                    <button class="icon moon" id="theme-dark" type="button">
+                    <button class="theme icon moon" id="theme-dark" type="button">
                       {% include "string.html" with name="base_theme_dark_newstring" %}
                     </button>
                   </li>
                   <li class="nav-subitem">
-                    <button class="icon circle" id="theme-system" type="button">
+                    <button class="theme icon circle" id="theme-system" type="button">
                       {% include "string.html" with name="base_theme_system_newstring" %}
                     </button>
                   </li>

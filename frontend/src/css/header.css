@@ -160,22 +160,6 @@ header:has(.active) {
   }
 }
 
-/* Navigation Item Button */
-.nav-item .nav-button {
-  border-bottom: none;
-  
-  &:hover {
-    border-bottom: none;
-  }
-
-  &::after {
-    @media (width >= 73.125rem) {
-      display: flex;
-      mask-image: url("/static/icons/angle-down.svg");
-    }
-  }
-}
-
 /* Navigation Controls */
 .nav-controls {
   align-items: center;
@@ -293,15 +277,19 @@ header nav {
       border-bottom: none;
     }
 
-    button {
+    .settings-button {
       display: flex;
       gap: 0.5rem;
       align-items: center;
       color: var(--nav-text-color);
       font: var(--nav-link);
-      border: none;
+      border-radius: 0.5rem;
+      background: var(--nav-lang-bg-color);
       cursor: pointer;
-      transition: background-color 0.2s ease;
+
+      @media (width >= 73.125rem) {
+        padding: 0.5rem 0.75rem;
+      }
 
       .current-language {
         @media (width >= 73.125rem) {
@@ -320,31 +308,10 @@ header nav {
           display: none;
         }
       }
-
-      &.settings {
-        background: var(--nav-lang-bg-color);
-        border-radius: 0.5rem;
-
-        @media (width >= 73.125rem) {
-          padding: 0.5rem 0.75rem;
-        }
-
-        &:hover {
-          background-color: var(--nav-dropdown-bg-color);
-          border-bottom: none;
-        }
-      }
-
-      &:hover {
-        @media (width >= 73.125rem) {
-          border-bottom: 2px solid currentcolor;
-        }
-      }
-
     }
 
     /* Navigation Item Links and Buttons */
-    a {
+    a, .link-button {
       display: flex;
       gap: 1rem;
       color: var(--nav-text-color);
@@ -435,13 +402,28 @@ header nav {
       display: flex;
       width: 100%;
 
-      & a, & button {
+      .theme {
+        @media (width >= 73.125rem) {
+          gap: 0.5rem;
+        }
+      }
+
+      a, button {
         display: flex;
         font: var(--subnav-link);
+        color: var(--nav-text-color);
         flex-grow: 1;
         justify-content: space-between;
         align-items: center;
-
+        border-bottom: 2px solid var(--transparent-100);
+        transition: border 0.3s;
+  
+        &:hover {
+          @media (width >= 73.125rem) {
+            border-bottom: 2px solid currentcolor;
+          }
+        }
+  
         @media (scripting: none) {
           font-size: 1rem;
         }
