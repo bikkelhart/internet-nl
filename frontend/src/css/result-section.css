@@ -588,14 +588,24 @@ meter::-moz-meter-bar {
         }
       }
 
+      p {
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style: initial;
+      }
+
       ul,
       ol {
-        list-style: initial;
-        list-style-position: inside;
-
         li {
-          margin-block: 0.5rem;
+          margin-block: 1rem;
+          margin-left: 1.5rem;
         }
+      }
+
+      hr {
+        margin-bottom: 0.5rem;
       }
 
       tbody {
