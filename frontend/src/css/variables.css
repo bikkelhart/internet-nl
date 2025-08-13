@@ -9,6 +9,7 @@
   --green-200: #EEF6F9;
   --green-300: #8BF1FF;
   --green-350: #219653;
+  --green-375: #21BD54;
   --green-400: #037584;
   --green-500: #34545F;
   --green-600: #22363C;
@@ -231,7 +232,7 @@
 
   /* RESULT STATE COLORS */
   --probing-color: light-dark(var(--green-400), var(--white-100));
-  --success-color: var(--green-350);
+  --success-color: light-dark(var(--green-350), var(--green-375));
   --warning-color: light-dark(var(--orange-375), var(--orange-350));
   --failed-color: light-dark(var(--red-100), var(--red-200));
   --not-tested-color: light-dark(var(--grey-100), var(--grey-300));
