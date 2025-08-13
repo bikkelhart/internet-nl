@@ -227,8 +227,8 @@
 
   /* ACCORDION COLORS LIGHTMODE */
   --accordion-bg-color: light-dark(var(--white-100), var(--black-200));
-  --accordion-heading-color: light-dark(var(--green-500), var(--white-100));
-  --accordion-body-color: light-dark(var(--green-500), var(--white-100));
+  --accordion-heading-color: light-dark(var(--black-200), var(--green-100));
+  --accordion-body-color: light-dark(var(--black-200), var(--white-100));
 
   /* RESULT STATE COLORS */
   --probing-color: light-dark(var(--green-400), var(--white-100));
