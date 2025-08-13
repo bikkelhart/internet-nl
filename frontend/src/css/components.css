@@ -230,14 +230,6 @@
   }
 }
 
-[data-theme="light"] {
-  color-scheme: light;
-
-  .card.large.knowledge-card {
-    border: none;
-  }
-}
-
 [data-theme="dark"] {
   color-scheme: dark;
   
@@ -462,14 +454,6 @@
 /* MARK: ACCORDION
 */
 
-[data-theme="light"] {
-  color-scheme: light;
-
-  .accordion {
-    border: 1px solid var(--green-400);
-  }
-}
-
 .accordion {
   appearance: none;
   overflow: clip;
@@ -519,5 +503,18 @@
       transition: transform 0.3s;
       background-color: var(--accordion-heading-color);
     }
+  }
+}
+
+/* Overwrites for light theme */
+[data-theme="light"] {
+  color-scheme: light;
+
+  .card.large.knowledge-card {
+    border: none;
+  }
+
+  .accordion {
+    border: 1px solid var(--green-400);
   }
 }
