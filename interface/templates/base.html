@@ -149,6 +149,11 @@
                 </button>
                 <ul id="nav-sublist-theme" class="nav-sublist">
                   <li class="nav-subitem">
+                    <button class="icon system" id="theme-system" type="button">
+                      {% include "string.html" with name="base_theme_system_newstring" %}
+                    </button>
+                  </li>
+                  <li class="nav-subitem">
                     <button class="icon sun" id="theme-light" type="button">
                       {% include "string.html" with name="base_theme_light_newstring" %}
                     </button>
@@ -156,11 +161,6 @@
                   <li class="nav-subitem">
                     <button class="icon moon" id="theme-dark" type="button">
                       {% include "string.html" with name="base_theme_dark_newstring" %}
-                    </button>
-                  </li>
-                  <li class="nav-subitem">
-                    <button class="icon circle" id="theme-system" type="button">
-                      {% include "string.html" with name="base_theme_system_newstring" %}
                     </button>
                   </li>
                 </ul>

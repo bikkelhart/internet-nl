@@ -138,10 +138,10 @@ header:has(.active) {
     }
   }
 
-  &.circle::before {
+  &.system::before {
     @media (width >= 73.125rem) {
       display: flex;
-      mask-image: url("/static/icons/circle.svg");
+      mask-image: url("/static/icons/system.svg");
     }
   }
 

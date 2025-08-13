@@ -65,7 +65,7 @@ function setTheme(theme) {
   setCookie("theme", theme, 365);
 
   document.documentElement.setAttribute("data-theme", theme);
-  elements.themeSelector.classList.remove("moon", "circle", "sun");
+  elements.themeSelector.classList.remove("moon", "system", "sun");
 
   switch (theme) {
     case "light":
@@ -77,7 +77,7 @@ function setTheme(theme) {
       elements.currentTheme.textContent = elements.dark.textContent;
       break;
     default:
-      elements.themeSelector.classList.add("circle");
+      elements.themeSelector.classList.add("system");
       elements.currentTheme.textContent = elements.system.textContent;
       break;
   }
