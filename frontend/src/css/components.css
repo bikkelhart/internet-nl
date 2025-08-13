@@ -230,6 +230,22 @@
   }
 }
 
+[data-theme="light"] {
+  color-scheme: light;
+
+  .card.large.knowledge-card {
+    border: none;
+  }
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  
+  .card.large.knowledge-card {
+    border: var(--card-border);
+  }
+}
+
 .card {
   border-radius: 0.5rem;
 
@@ -279,7 +295,13 @@
 
   &.large {
     &.knowledge-card {
-      border: var(--card-border-knowledge);
+      @media (prefers-color-scheme: dark) {
+        border: var(--card-border);
+      }
+
+      @media (prefers-color-scheme: light) {
+        border: none;
+      }
     }
 
     &.news-card {
