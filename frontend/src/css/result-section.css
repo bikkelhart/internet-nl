@@ -42,9 +42,16 @@
     gap: 1rem;
   }
 
+  .main-item {
+    &::before {
+      min-width: 1.75rem;
+      min-height: 1.75rem;
+    }
+  }
+
   li:not(.meter-number) {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     align-items: center;
 
     a {
@@ -58,10 +65,7 @@
       background-color: unset;
       background-repeat: no-repeat;
       background-size: cover;
-      width: 1.25rem;
-      height: 1.25rem;
-      min-height: 1.25rem;
-      min-width: 1.25rem;
+
     }
 
     &.probing:has(:not(.done))::before {
@@ -75,20 +79,14 @@
     &.probing:has(.done)::before {
       mask-image: url("/static/icons/circle-done.svg");
       background-color: var(--probing-color);
-      width: 1.5rem;
-      height: 1.5rem;
-      min-height: 1.5rem;
-      min-width: 1.5rem;
+
     }
 
     &:not(.probing)::before {
       background-color: unset;
       background-repeat: no-repeat;
       background-size: cover;
-      width: 1.5rem;
-      height: 1.5rem;
-      min-height: 1.5rem;
-      min-width: 1.5rem;
+
       display: block;
     }
 
