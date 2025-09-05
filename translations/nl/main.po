@@ -4648,6 +4648,12 @@ msgstr ""
 msgid "page404 title"
 msgstr "Pagina niet gevonden!"
 
+msgid "page404 contact"
+msgstr "We helpen je graag verder"
+
+msgid "page404 button"
+msgstr "Terug naar de homepage"
+
 msgid "privacy content"
 msgstr ""
 "# Privacyverklaring\n"

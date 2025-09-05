@@ -4637,6 +4637,12 @@ msgstr ""
 msgid "page404 title"
 msgstr "Page not found!"
 
+msgid "page404 contact"
+msgstr "We are happy to help you"
+
+msgid "page404 button"
+msgstr "Back to the homepage"
+
 msgid "privacy content"
 msgstr ""
 "# Privacy statement\n"
