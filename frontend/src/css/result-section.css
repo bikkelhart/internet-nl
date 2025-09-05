@@ -79,6 +79,8 @@
     &.probing:has(.done)::before {
       mask-image: url("/static/icons/circle-done.svg");
       background-color: var(--probing-color);
+      width: 1.75rem;
+      height: 1.75rem
 
     }
 
