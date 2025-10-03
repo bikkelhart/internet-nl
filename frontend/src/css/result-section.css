@@ -621,7 +621,8 @@ meter::-moz-meter-bar {
       td,
       th {
         padding: 0.375rem;
-        font-size: 0.875rem;
+        font: var(--body-font-xs-bold);
+        text-align: left;
 
         &:first-child {
           padding-left: 0;
