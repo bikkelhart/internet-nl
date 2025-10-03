@@ -614,14 +614,9 @@ meter::-moz-meter-bar {
         font-family: monospace, sans-serif;
       }
 
-      th {
-        border-bottom: 1px solid var(--grey-300);
-      }
-
       td,
       th {
         padding: 0.375rem;
-        font: var(--body-font-xs-bold);
         text-align: left;
 
         &:first-child {
