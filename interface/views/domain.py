@@ -28,6 +28,7 @@ from interface.views.shared import (
     get_valid_domain_mail,
     get_valid_domain_web,
     pretty_domain_name,
+    pretty_domain_name_for_results,
     proberesults,
     probestatuses,
     process,
@@ -109,6 +110,7 @@ def resultsrender(addr, report, request):
     retest_time = get_retest_time(report)
     webtest_direct, mailtest_direct = get_direct_domains(addr)
     prettyaddr = pretty_domain_name(addr)
+    prettyaddr_results = pretty_domain_name_for_results(addr)
     return render(
         request,
         "domain-results.html",
@@ -117,6 +119,7 @@ def resultsrender(addr, report, request):
             pagetitle="{} {}".format(_("domain pagetitle"), prettyaddr),
             addr=addr,
             prettyaddr=prettyaddr,
+            prettyaddr_results=prettyaddr_results,
             permalink=request.build_absolute_uri(f"/site/{addr}/{str(report.id)}/"),
             permadate=report.timestamp,
             retest_time=retest_time,

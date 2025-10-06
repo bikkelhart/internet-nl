@@ -147,6 +147,26 @@ def pretty_domain_name(dname):
     return pretty
 
 
+def pretty_domain_name_for_results(dname):
+    """
+    Return a pretty printable domain name for results display.
+
+    Uses pretty_domain_name() for punycode decoding, then applies www. logic:
+    - If the domain is a top-level domain (no www.), display it as "www.{domain}".
+    - If the domain starts with "www.", display it as just the top-level domain.
+
+    """
+    pretty = pretty_domain_name(dname)
+    
+    # Handle www. logic for results display
+    if pretty.startswith("www."):
+        # If it starts with www., remove it to show just the top-level domain
+        return pretty[4:]  # Remove "www." prefix
+    else:
+        # If it's a top-level domain, add www. prefix
+        return f"www.{pretty}"
+
+
 # Page calling/displaying JSON API
 # URL: /(site|domain)/<dname>
 def process(request, dname, template, probes, pageclass, pagetitle):

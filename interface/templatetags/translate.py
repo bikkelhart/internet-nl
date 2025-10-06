@@ -18,6 +18,7 @@ from checks.scoring import (
     STATUS_SUCCESS,
     STATUSES_HTML_CSS_TEXT_MAP,
 )
+from interface.views.shared import pretty_domain_name_for_results
 
 register = template.Library()
 
@@ -204,3 +205,15 @@ def get_settings_value(name):
 
     """
     return getattr(settings, name, "")
+
+
+@register.filter()
+def pretty_domain_for_results(domain):
+    """
+    Return a pretty printable domain name for results display.
+    
+    If the domain is a top-level domain (no www.), display it as "www.{domain}".
+    If the domain starts with "www.", display it as just the top-level domain.
+
+    """
+    return pretty_domain_name_for_results(domain)
